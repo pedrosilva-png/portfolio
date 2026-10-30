@@ -1,8 +1,6 @@
 (() => {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const printBtn = document.getElementById("btn-print");
   const clock = document.getElementById("clock");
-  const mapTime = document.getElementById("map-time");
   const statusEl = document.getElementById("typed-status");
   const progress = document.getElementById("scroll-progress");
   const palette = document.getElementById("command-palette");
@@ -13,11 +11,9 @@
     if (!clock) return;
     const d = new Date();
     clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} BRT`;
-    if (mapTime) mapTime.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
   };
   tick();
   setInterval(tick, 1000);
-  printBtn?.addEventListener("click", () => window.print());
 
   // Split hero headline into animated words
   const h1 = document.querySelector(".hero h1");
@@ -31,7 +27,7 @@
           .split(/\s+/)
           .filter(Boolean)
           .map((w, i, arr) => {
-            const delay = 0.08 + i * 0.06;
+            const delay = 0.06 + i * 0.05;
             return `<span class="word" style="animation-delay:${delay}s">${w}</span>${i < arr.length - 1 ? " " : ""}`;
           })
           .join("")
@@ -48,17 +44,55 @@
       if (i <= full.length) {
         statusEl.textContent = full.slice(0, i);
         i += 1;
-        setTimeout(type, 28);
+        setTimeout(type, 24);
       }
     };
-    setTimeout(type, 400);
+    setTimeout(type, 300);
   }
 
-  // Scroll reveal
-  document.querySelectorAll(".project, .genai-card, .stack-layer, .stack-monitor, .contact-panel").forEach((el, idx) => {
-    el.classList.add("reveal");
-    el.style.transitionDelay = `${(idx % 4) * 0.07}s`;
+  // Copy email button
+  document.querySelectorAll(".copy-email").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const email = btn.getAttribute("data-copy") || "phelohim@gmail.com";
+      const original = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(email);
+        btn.textContent = "E-mail copiado ✓";
+      } catch {
+        window.location.href = `mailto:${email}`;
+      }
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 2000);
+    });
   });
+
+  // Category filter on projects
+  const filterBtns = [...document.querySelectorAll(".filter-btn")];
+  const projects = [...document.querySelectorAll(".project[data-category]")];
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cat = btn.getAttribute("data-filter") || "all";
+      filterBtns.forEach((b) => b.classList.toggle("active", b === btn));
+      let visibleIndex = 0;
+      projects.forEach((proj) => {
+        const match = cat === "all" || proj.getAttribute("data-category") === cat;
+        proj.classList.toggle("is-hidden", !match);
+        if (match) {
+          proj.style.setProperty("--i", String(visibleIndex));
+          visibleIndex += 1;
+        }
+      });
+    });
+  });
+
+  // Scroll reveal
+  document
+    .querySelectorAll(".project, .genai-card, .timeline-card, .stack-layer, .stack-monitor, .contact-panel")
+    .forEach((el, idx) => {
+      el.classList.add("reveal");
+      el.style.transitionDelay = `${(idx % 4) * 0.06}s`;
+    });
 
   const io = new IntersectionObserver(
     (entries) => {
@@ -69,7 +103,7 @@
         }
       });
     },
-    { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
@@ -81,42 +115,34 @@
       if (!match) return;
       const target = Number(match[1]);
       const suffix = raw.slice(match[1].length);
-      let n = 0;
-      const frames = 28;
+      const frames = 24;
       let f = 0;
       const run = () => {
         f += 1;
-        n = Math.round((target * f) / frames);
+        const n = Math.round((target * f) / frames);
         el.textContent = `${n}${suffix}`;
         if (f < frames) requestAnimationFrame(run);
       };
-      setTimeout(() => requestAnimationFrame(run), 500);
+      setTimeout(() => requestAnimationFrame(run), 400);
     });
   }
 
-  // Soft parallax on orb following pointer
+  // Soft parallax on orb + cursor spotlight + reading progress
   const orb = document.querySelector(".orb");
-  if (orb && !reduce) {
-    window.addEventListener(
-      "pointermove",
-      (e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 30;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
-        orb.style.translate = `${x}px ${y}px`;
-      },
-      { passive: true }
-    );
-  }
-
-  // Cursor spotlight + reading progress
   window.addEventListener(
     "pointermove",
     (e) => {
       document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
       document.documentElement.style.setProperty("--my", `${e.clientY}px`);
+      if (orb && !reduce) {
+        const x = (e.clientX / window.innerWidth - 0.5) * 28;
+        const y = (e.clientY / window.innerHeight - 0.5) * 18;
+        orb.style.translate = `${x}px ${y}px`;
+      }
     },
     { passive: true }
   );
+
   const updateProgress = () => {
     if (!progress) return;
     const total = document.documentElement.scrollHeight - window.innerHeight;

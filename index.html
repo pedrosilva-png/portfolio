@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pedro Henrique — Portfólio</title>
-  <meta name="description" content="Portfólio tech de Pedro Henrique Rodrigues da Silva — Cybhor Tech, GenAI, produtos em produção." />
+  <title>Pedro Henrique Rodrigues da Silva — Portfólio de Engenharia & Produto</title>
+  <meta name="description" content="Portfólio de Pedro Henrique Rodrigues da Silva — Sistemas de Informação, Cybhor Tech, APIs, automações e aplicações GenAI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,13 +24,14 @@
     <nav>
       <a href="#projetos">/projetos</a>
       <a href="#genai">/genai</a>
+      <a href="#experiencia">/trajetória</a>
       <a href="#stack">/stack</a>
       <a href="#contato">/contato</a>
     </nav>
     <div class="top-actions">
       <button type="button" class="btn command-trigger" id="command-trigger"><kbd>⌘</kbd> K</button>
       <a class="btn ghost" href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">GitHub ↗</a>
-      <button type="button" class="btn solid" id="btn-print">Export CV</button>
+      <a class="btn solid" href="curriculo-pedro-henrique.pdf" download>Baixar CV (PDF)</a>
     </div>
   </header>
 
@@ -39,39 +40,37 @@
       <div class="hero-left">
         <p class="status-line">
           <span class="led"></span>
-          <span id="typed-status">status: online · building products</span>
+          <span id="typed-status">disponível para estágio / júnior · ~30h/semana</span>
         </p>
         <h1>Software que<br />sai do notebook<br />e vai pra produção.</h1>
         <p class="lede">
-          Pedro Henrique · 19 · Sistemas de Informação (4/8).<br />
-          Fundador da <a href="https://cybhor.tech" target="_blank" rel="noopener">Cybhor Tech</a>,
-          estágio de TI na Prefeitura de Fernandópolis, demos GenAI no ar.
+          <strong>Pedro Henrique Rodrigues da Silva</strong> · 19 anos · Sistemas de Informação (4º/8, formatura 2º sem/2028).<br />
+          Estágio de TI na Prefeitura de Fernandópolis, fundador da <a href="https://cybhor.tech" target="_blank" rel="noopener">Cybhor Tech</a>
+          (produto com cliente ativo) e criador de automações, APIs e pipelines GenAI.
         </p>
         <div class="cta-row">
-          <a class="btn solid" href="#projetos">Ver projetos</a>
-          <a class="btn ghost" href="mailto:phelohim@gmail.com">phelohim@gmail.com</a>
+          <a class="btn solid" href="#projetos">Explorar 9 projetos</a>
+          <a class="btn ghost" href="curriculo-pedro-henrique.pdf" target="_blank" rel="noopener">Abrir currículo PDF</a>
+          <button type="button" class="btn ghost copy-email" data-copy="phelohim@gmail.com">Copiar e-mail</button>
         </div>
         <ul class="quick-stats">
-          <li><span>produtos</span><strong>live</strong></li>
-          <li><span>cliente</span><strong>1+</strong></li>
-          <li><span>disponível</span><strong>~30h</strong></li>
+          <li><span>repositórios</span><strong>9</strong></li>
+          <li><span>clientes reais</span><strong>1+</strong></li>
+          <li><span>disponibilidade</span><strong>30h/sem</strong></li>
           <li><span>formatura</span><strong>2028</strong></li>
         </ul>
       </div>
 
-      <aside class="systems-map" aria-label="Mapa dos projetos">
+      <aside class="systems-map" aria-label="Mapa interativo dos projetos">
         <div class="map-head">
           <div>
-            <span class="map-kicker">SYSTEM MAP</span>
-            <strong>Projetos conectados</strong>
+            <span class="map-kicker">ARQUITETURA DE PORTFÓLIO</span>
+            <strong>Clique em qualquer módulo para abrir</strong>
           </div>
-          <span class="sync"><i></i> synced</span>
+          <span class="sync"><i></i> 9 repos públicos</span>
         </div>
         <div class="map-stage">
-          <svg class="circuit" viewBox="0 0 600 470" role="img" aria-label="Cybhor conectada aos projetos">
-            <defs>
-              <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
-            </defs>
+          <svg class="circuit" viewBox="0 0 600 470" role="img" aria-label="Mapa de projetos conectados">
             <path class="route route-a" d="M300 235 C210 235 210 105 115 105"/>
             <path class="route route-b" d="M300 235 C390 235 390 105 485 105"/>
             <path class="route route-c" d="M300 235 C210 235 210 365 115 365"/>
@@ -80,158 +79,230 @@
             <circle class="pulse-ring delay" cx="300" cy="235" r="66"/>
           </svg>
           <a class="map-node core" href="https://cybhor.tech" target="_blank" rel="noopener">
-            <span>CORE</span><strong>CYBHOR</strong><small>prod · live</small>
+            <span>PRODUÇÃO</span><strong>CYBHOR</strong><small>cybhor.tech</small>
           </a>
-          <a class="map-node node-a" href="https://github.com/PhCybhor/CybhorTechPDV" target="_blank" rel="noopener">
-            <span>01</span><strong>PDV</strong><small>retail</small>
+          <a class="map-node node-a" href="https://github.com/pedrosilva-png/CybhorTechPDV" target="_blank" rel="noopener">
+            <span>PDV</span><strong>VAREJO</strong><small>operação comercial</small>
           </a>
-          <a class="map-node node-b" href="https://github.com/PhCybhor/LoomaMarketplace" target="_blank" rel="noopener">
-            <span>02</span><strong>LOOMA</strong><small>marketplace</small>
+          <a class="map-node node-b" href="https://github.com/pedrosilva-png/papelaria-estoque-api" target="_blank" rel="noopener">
+            <span>JAVA 21</span><strong>SPRING API</strong><small>PostgreSQL + Liquibase</small>
           </a>
           <a class="map-node node-c" href="#genai">
-            <span>03</span><strong>GENAI</strong><small>3 pipelines</small>
+            <span>PYTHON</span><strong>3× GENAI</strong><small>RAG · Agente · KPIs</small>
           </a>
-          <a class="map-node node-d" href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">
-            <span>04</span><strong>PORTAL</strong><small>internal ops</small>
+          <a class="map-node node-d" href="https://github.com/pedrosilva-png/automacao-levantamento-patrimonial" target="_blank" rel="noopener">
+            <span>TI PÚBLICA</span><strong>PATRIMÔNIO</strong><small>JSON → .docx A4</small>
           </a>
           <div class="packet p1"></div>
           <div class="packet p2"></div>
           <div class="packet p3"></div>
         </div>
         <div class="map-foot">
-          <span><i class="dot active"></i> 4 módulos ativos</span>
-          <span>latency 24ms</span>
-          <span id="map-time">00:00:00</span>
+          <span><i class="dot active"></i> Código verificável no GitHub</span>
+          <span>Fernandópolis/SP · Remoto/Híbrido</span>
         </div>
       </aside>
     </section>
 
-    <div class="tech-ticker" aria-label="Tecnologias">
+    <div class="tech-ticker" aria-label="Tecnologias principais">
       <div class="ticker-track">
-        <span>PYTHON</span><i></i><span>JAVASCRIPT</span><i></i><span>RAG</span><i></i>
-        <span>AGENTS</span><i></i><span>APIs</span><i></i><span>LINUX</span><i></i>
-        <span>GIT</span><i></i><span>GRADIO</span><i></i><span>SHIPPING</span><i></i>
-        <span>PYTHON</span><i></i><span>JAVASCRIPT</span><i></i><span>RAG</span><i></i>
-        <span>AGENTS</span><i></i><span>APIs</span><i></i><span>LINUX</span><i></i>
+        <span>PYTHON</span><i></i><span>JAVA 21 · SPRING BOOT</span><i></i><span>JAVASCRIPT · NODE.JS</span><i></i>
+        <span>RAG · AGENTES · GRADIO</span><i></i><span>POSTGRESQL · MYSQL</span><i></i><span>AUTOMAÇÃO DE PROCESSOS</span><i></i>
+        <span>LINUX · GIT · DEPLOY</span><i></i>
+        <span>PYTHON</span><i></i><span>JAVA 21 · SPRING BOOT</span><i></i><span>JAVASCRIPT · NODE.JS</span><i></i>
+        <span>RAG · AGENTES · GRADIO</span><i></i><span>POSTGRESQL · MYSQL</span><i></i><span>AUTOMAÇÃO DE PROCESSOS</span><i></i>
       </div>
     </div>
 
     <section class="section" id="projetos" data-section="projetos">
       <div class="section-bar">
-        <h2><span class="hash">#</span> projetos</h2>
-        <p>Produto real + engenharia. Clique no repo para o código.</p>
+        <div>
+          <h2><span class="hash">#</span> projetos de engenharia & produto</h2>
+          <p>Sistemas reais, automações e APIs construídas no computador e publicadas no GitHub.</p>
+        </div>
+        <div class="filter-bar" role="tablist" aria-label="Filtrar projetos">
+          <button type="button" class="filter-btn active" data-filter="all">Todos (6)</button>
+          <button type="button" class="filter-btn" data-filter="produto">Produto & Cliente</button>
+          <button type="button" class="filter-btn" data-filter="backend">Backend & API</button>
+          <button type="button" class="filter-btn" data-filter="automacao">Automação TI</button>
+        </div>
       </div>
 
       <div class="project-list">
-        <article class="project" style="--i:0">
+        <article class="project" data-category="produto" style="--i:0">
           <div class="project-visual">
-            <img src="assets/proj-cybhor.webp" alt="" loading="lazy" />
-            <div class="frame-label">prod · live</div>
+            <img src="assets/proj-cybhor.webp" alt="Arquitetura Cybhor Tech" loading="lazy" />
+            <div class="frame-label">produção · domínio próprio</div>
             <span class="project-no">01</span>
           </div>
           <div class="project-body">
             <div class="project-head">
-              <h3>Cybhor Tech</h3>
-              <span class="badge live">LIVE</span>
+              <h3>Cybhor Tech & Cybhor PDV</h3>
+              <span class="badge live">EM PRODUÇÃO · 1 CLIENTE</span>
             </div>
-            <p>Empresa própria de soluções digitais (site, PDV, sob medida). Do briefing ao deploy com IA — <strong>1 cliente</strong> em operação.</p>
+            <p>Iniciativa própria de software para comércio e negócios locais: site institucional, sistema PDV e entregas sob medida. Desenvolvido de ponta a ponta com apoio de IA, publicado em produção e já operando com cliente real.</p>
             <dl class="case-metrics">
-              <div><dt>estado</dt><dd>produção</dd></div>
-              <div><dt>entrega</dt><dd>end-to-end</dd></div>
-              <div><dt>impacto</dt><dd>cliente real</dd></div>
+              <div><dt>status</dt><dd>cybhor.tech no ar</dd></div>
+              <div><dt>escopo</dt><dd>site + PDV + deploy</dd></div>
+              <div><dt>validação</dt><dd>1 cliente ativo</dd></div>
             </dl>
             <ul class="tech">
-              <li>HTML/CSS/JS</li>
-              <li>Deploy Hostinger</li>
-              <li>Cursor + LLMs</li>
+              <li>JavaScript</li>
+              <li>HTML/CSS</li>
+              <li>Python Build</li>
+              <li>Deploy SSH/Hostinger</li>
             </ul>
             <div class="project-links">
-              <a href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech ↗</a>
-              <a href="https://github.com/PhCybhor/CybhorTech" target="_blank" rel="noopener">repo</a>
-              <a href="https://github.com/PhCybhor/CybhorTechPDV" target="_blank" rel="noopener">PDV</a>
+              <a href="https://cybhor.tech" target="_blank" rel="noopener">Abrir site ao vivo ↗</a>
+              <a href="https://github.com/pedrosilva-png/CybhorTech" target="_blank" rel="noopener">Repo Site ↗</a>
+              <a href="https://github.com/pedrosilva-png/CybhorTechPDV" target="_blank" rel="noopener">Repo PDV ↗</a>
             </div>
           </div>
         </article>
 
-        <article class="project" style="--i:1">
+        <article class="project" data-category="backend" style="--i:1">
           <div class="project-visual">
-            <img src="assets/proj-looma.webp" alt="" loading="lazy" />
-            <div class="frame-label">backend · marketplace</div>
+            <img src="assets/proj-java-api.webp" alt="Arquitetura API Spring Boot" loading="lazy" />
+            <div class="frame-label">java 21 · spring boot · postgresql</div>
             <span class="project-no">02</span>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>API REST de Controle de Estoque (Papelaria)</h3>
+              <span class="badge">JAVA 21 · SPRING BOOT</span>
+            </div>
+            <p>API REST completa com entidades de domínio ricas (sem modelo anêmico), controle transacional de saldo, fornecedores por CNPJ, migrações versionadas com Liquibase, Docker Compose e suíte de testes de integração.</p>
+            <dl class="case-metrics">
+              <div><dt>arquitetura</dt><dd>Controller · Service · Domain</dd></div>
+              <div><dt>banco</dt><dd>PostgreSQL + Liquibase</dd></div>
+              <div><dt>qualidade</dt><dd>testes JUnit/JPA</dd></div>
+            </dl>
+            <ul class="tech">
+              <li>Java 21</li>
+              <li>Spring Boot</li>
+              <li>JPA / Hibernate</li>
+              <li>Liquibase</li>
+              <li>PostgreSQL</li>
+              <li>Docker</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/pedrosilva-png/papelaria-estoque-api" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-category="automacao" style="--i:2">
+          <div class="project-visual">
+            <img src="assets/proj-patrimonio.webp" alt="Automação de levantamento patrimonial" loading="lazy" />
+            <div class="frame-label">python · automação documental</div>
+            <span class="project-no">03</span>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Automação de Levantamento Patrimonial</h3>
+              <span class="badge live">PROBLEMA REAL DE TI</span>
+            </div>
+            <p>Ferramenta em Python criada para eliminar a montagem manual de relatórios de bens patrimoniais: valida o JSON do inventário, confere as fotos de cada item e gera automaticamente o documento A4 `.docx` padronizado.</p>
+            <dl class="case-metrics">
+              <div><dt>entrada</dt><dd>JSON + fotos dos bens</dd></div>
+              <div><dt>saída</dt><dd>Relatório .docx A4</dd></div>
+              <div><dt>ganho</dt><dd>zero formatação manual</dd></div>
+            </dl>
+            <ul class="tech">
+              <li>Python</li>
+              <li>python-docx</li>
+              <li>Pillow</li>
+              <li>Validação de dados</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/pedrosilva-png/automacao-levantamento-patrimonial" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-category="backend" style="--i:3">
+          <div class="project-visual">
+            <img src="assets/proj-looma.webp" alt="Arquitetura Looma Marketplace" loading="lazy" />
+            <div class="frame-label">node.js · express · mysql</div>
+            <span class="project-no">04</span>
           </div>
           <div class="project-body">
             <div class="project-head">
               <h3>Looma Marketplace</h3>
               <span class="badge">MULTI-VENDOR</span>
             </div>
-            <p>Marketplace multi-vendor com Node.js, Express e MySQL — catálogo, vendedores e operação comercial.</p>
+            <p>Plataforma de marketplace multi-lojista com autenticação, rotas separadas por camada (`controllers`, `services`, `middlewares`), migrações SQL e painel para vendedores e catálogo.</p>
             <dl class="case-metrics">
               <div><dt>modelo</dt><dd>multi-vendor</dd></div>
-              <div><dt>dados</dt><dd>MySQL</dd></div>
-              <div><dt>runtime</dt><dd>Node.js</dd></div>
+              <div><dt>persistência</dt><dd>MySQL relacional</dd></div>
+              <div><dt>backend</dt><dd>Node.js + Express</dd></div>
             </dl>
             <ul class="tech">
               <li>Node.js</li>
               <li>Express</li>
               <li>MySQL</li>
+              <li>REST</li>
             </ul>
             <div class="project-links">
-              <a href="https://github.com/PhCybhor/LoomaMarketplace" target="_blank" rel="noopener">repo ↗</a>
+              <a href="https://github.com/pedrosilva-png/LoomaMarketplace" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
             </div>
           </div>
         </article>
 
-        <article class="project" style="--i:2">
+        <article class="project" data-category="produto" style="--i:4">
           <div class="project-visual">
-            <img src="assets/proj-peru.webp" alt="" loading="lazy" />
-            <div class="frame-label">client · ecommerce</div>
-            <span class="project-no">03</span>
+            <img src="assets/proj-peru.webp" alt="E-commerce PERUOFICIAL" loading="lazy" />
+            <div class="frame-label">cliente · e-commerce</div>
+            <span class="project-no">05</span>
           </div>
           <div class="project-body">
             <div class="project-head">
-              <h3>PERUOFICIAL</h3>
-              <span class="badge live">CLIENT</span>
+              <h3>PERUOFICIAL — E-commerce</h3>
+              <span class="badge live">PROJETO CLIENTE</span>
             </div>
-            <p>E-commerce para loja física entrando no digital — entrega Cybhor com foco em conversão.</p>
+            <p>Vitrine digital e fluxo de compra para loja física iniciando operação online, com foco em carregamento rápido, catálogo claro e atendimento móvel.</p>
             <dl class="case-metrics">
-              <div><dt>origem</dt><dd>loja física</dd></div>
-              <div><dt>canal</dt><dd>digital</dd></div>
-              <div><dt>tipo</dt><dd>cliente</dd></div>
+              <div><dt>contexto</dt><dd>loja física → online</dd></div>
+              <div><dt>foco</dt><dd>conversão mobile</dd></div>
+              <div><dt>entrega</dt><dd>Cybhor Tech</dd></div>
             </dl>
             <ul class="tech">
-              <li>Front</li>
-              <li>E-commerce</li>
+              <li>JavaScript</li>
+              <li>HTML/CSS</li>
+              <li>UI Responsiva</li>
             </ul>
             <div class="project-links">
-              <a href="https://github.com/PhCybhor/PERUOFICIAL" target="_blank" rel="noopener">repo ↗</a>
+              <a href="https://github.com/PhCybhor/PERUOFICIAL" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
             </div>
           </div>
         </article>
 
-        <article class="project" style="--i:3">
+        <article class="project" data-category="produto" style="--i:5">
           <div class="project-visual">
-            <img src="assets/proj-portal.webp" alt="" loading="lazy" />
-            <div class="frame-label">internal · ops</div>
-            <span class="project-no">04</span>
+            <img src="assets/proj-portal.webp" alt="Portal Cybhor" loading="lazy" />
+            <div class="frame-label">operações internas · web + php</div>
+            <span class="project-no">06</span>
           </div>
           <div class="project-body">
             <div class="project-head">
-              <h3>Portal Cybhor</h3>
-              <span class="badge">INTERNAL</span>
+              <h3>Portal Cybhor v2</h3>
+              <span class="badge">OPS INTERNA</span>
             </div>
-            <p>Portal da equipe (web + mobile) para organizar rotina e operações da empresa.</p>
+            <p>Portal interno para acompanhamento de tarefas, progresso da equipe e leitura de commits/entregas da Cybhor, com versão web e adaptação mobile.</p>
             <dl class="case-metrics">
-              <div><dt>plataforma</dt><dd>web</dd></div>
-              <div><dt>variante</dt><dd>mobile</dd></div>
-              <div><dt>uso</dt><dd>operações</dd></div>
+              <div><dt>módulos</dt><dd>tarefas + commits</dd></div>
+              <div><dt>backend leve</dt><dd>PHP + SQL</dd></div>
+              <div><dt>deploy</dt><dd>GitHub Actions</dd></div>
             </dl>
             <ul class="tech">
-              <li>Static web</li>
-              <li>Mobile UI</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>SQL</li>
+              <li>GitHub Actions</li>
             </ul>
             <div class="project-links">
-              <a href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">v2 ↗</a>
-              <a href="https://github.com/PhCybhor/portalCybhorMobile" target="_blank" rel="noopener">mobile</a>
+              <a href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">Repo v2 ↗</a>
+              <a href="https://github.com/PhCybhor/portalCybhorMobile" target="_blank" rel="noopener">Repo Mobile ↗</a>
             </div>
           </div>
         </article>
@@ -240,17 +311,19 @@
 
     <section class="section genai" id="genai" data-section="genai">
       <div class="section-bar">
-        <h2><span class="hash">#</span> genai</h2>
-        <p>Pipelines que rodam — RAG, agente com tools, automação com métrica.</p>
+        <div>
+          <h2><span class="hash">#</span> projetos genai (repositórios independentes)</h2>
+          <p>Três aplicações separadas em Python — cada uma em seu próprio repositório público com README e execução local.</p>
+        </div>
       </div>
 
       <div class="genai-grid">
         <article class="genai-card">
-          <img src="assets/proj-rag.webp" alt="" loading="lazy" />
+          <img src="assets/proj-rag.webp" alt="Pipeline RAG FAQ Delivery" loading="lazy" />
           <div class="genai-meta">
-            <span class="path">01-rag-cardapio/</span>
-            <h3>RAG FAQ Delivery</h3>
-            <p>TF-IDF + intent + resposta grounded. Gradio + dataset Hugging Face.</p>
+            <span class="path">pedrosilva-png/rag-faq-delivery</span>
+            <h3>RAG Cardápio & FAQ de Delivery</h3>
+            <p>Recuperação TF-IDF, classificação de intenção e resposta grounded com citação da fonte, interface Gradio e exportação para Hugging Face Datasets.</p>
             <div class="pipeline" aria-label="Pipeline RAG">
               <span>query</span><i></i><span>retrieve</span><i></i><span>ground</span><i></i><span>answer</span>
             </div>
@@ -260,87 +333,122 @@
               <li>Python</li>
               <li>scikit-learn</li>
               <li>Gradio</li>
+              <li>HF Dataset</li>
             </ul>
-            <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/01-rag-cardapio" target="_blank" rel="noopener">abrir módulo ↗</a>
+            <a href="https://github.com/pedrosilva-png/rag-faq-delivery" target="_blank" rel="noopener">Abrir repositório ↗</a>
           </div>
         </article>
+
         <article class="genai-card">
-          <img src="assets/proj-agente.webp" alt="" loading="lazy" />
+          <img src="assets/proj-agente.webp" alt="Pipeline Agente Ops Delivery" loading="lazy" />
           <div class="genai-meta">
-            <span class="path">02-agente-ops/</span>
-            <h3>Agente Ops</h3>
-            <p>Planner → tools (pedido, SLA, ticket) → resposta com trace JSON.</p>
+            <span class="path">pedrosilva-png/agente-ops-delivery</span>
+            <h3>Agente de Operações com Tools</h3>
+            <p>Orquestra 5 ferramentas para triagem de tickets operacionais: consulta pedido, lista atrasos, classifica prioridade, sugere ação e calcula SLA com trace JSON auditável.</p>
             <div class="pipeline" aria-label="Pipeline do agente">
               <span>plan</span><i></i><span>tools</span><i></i><span>trace</span><i></i><span>reply</span>
             </div>
-            <pre><code><b>tool</b>: consultar_pedido
-<b>priority</b>: high · <b>sla</b>: 15m</code></pre>
+            <pre><code><b>tool</b>: consultar_pedido("IF-10025")
+<b>priority</b>: alta · <b>sla</b>: 15 min</code></pre>
             <ul class="tech">
               <li>Python</li>
-              <li>Tool calling</li>
+              <li>Tool Calling</li>
+              <li>Trace JSON</li>
               <li>Gradio</li>
             </ul>
-            <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/02-agente-ops" target="_blank" rel="noopener">abrir módulo ↗</a>
+            <a href="https://github.com/pedrosilva-png/agente-ops-delivery" target="_blank" rel="noopener">Abrir repositório ↗</a>
           </div>
         </article>
+
         <article class="genai-card">
-          <img src="assets/proj-auto.webp" alt="" loading="lazy" />
+          <img src="assets/proj-auto.webp" alt="Pipeline Automação de Relatório" loading="lazy" />
           <div class="genai-meta">
-            <span class="path">03-automacao-relatorio/</span>
-            <h3>Automação relatório</h3>
-            <p>~50 min/dia → segundos. KPIs, alertas, manifesto n8n/Make.</p>
+            <span class="path">pedrosilva-png/automacao-relatorio-pedidos</span>
+            <h3>Automação de Relatório Operacional</h3>
+            <p>Processa CSV de pedidos, calcula GMV, cancelamentos e atrasos, dispara alertas e gera relatório em Markdown + manifesto compatível com n8n/Make.</p>
             <div class="pipeline" aria-label="Pipeline da automação">
               <span>CSV</span><i></i><span>KPIs</span><i></i><span>alert</span><i></i><span>report</span>
             </div>
-            <pre><code><b>before</b>: 50min/day
-<b>after</b>: &lt;1s · <b>saved</b>: ~4h/week</code></pre>
+            <pre><code><b>manual</b>: ~50 min/dia
+<b>script</b>: &lt;1 s · <b>economia</b>: ~4h/sem</code></pre>
             <ul class="tech">
               <li>Python</li>
               <li>pandas</li>
-              <li>Automation</li>
+              <li>KPIs</li>
+              <li>n8n / Make JSON</li>
             </ul>
-            <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/03-automacao-relatorio" target="_blank" rel="noopener">abrir módulo ↗</a>
+            <a href="https://github.com/pedrosilva-png/automacao-relatorio-pedidos" target="_blank" rel="noopener">Abrir repositório ↗</a>
           </div>
         </article>
       </div>
-      <p class="repo-line">
-        monorepo →
-        <a href="https://github.com/pedrosilva-png/genai-portfolio" target="_blank" rel="noopener">github.com/pedrosilva-png/genai-portfolio</a>
-      </p>
+    </section>
+
+    <section class="section" id="experiencia" data-section="experiencia">
+      <div class="section-bar">
+        <div>
+          <h2><span class="hash">#</span> experiência & formação</h2>
+          <p>Contexto rápido para recrutadores e gestores técnicos.</p>
+        </div>
+      </div>
+
+      <div class="timeline-grid">
+        <article class="timeline-card">
+          <span class="time-tag">ATUAL · ESTÁGIO</span>
+          <h3>Prefeitura Municipal de Fernandópolis — TI</h3>
+          <p>Suporte técnico a sistemas e usuários, apoio a rotinas operacionais de tecnologia no setor público e automação de demandas internas.</p>
+        </article>
+        <article class="timeline-card">
+          <span class="time-tag">2025 – ATUAL · FUNDADOR</span>
+          <h3>Cybhor Tech (<a href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech</a>)</h3>
+          <p>Desenvolvimento de sites, PDV e soluções digitais sob medida com IA assistida, do levantamento com cliente ao deploy e manutenção.</p>
+        </article>
+        <article class="timeline-card">
+          <span class="time-tag">4º / 8 SEMESTRES · CONCLUSÃO 2º SEM/2028</span>
+          <h3>Bacharelado em Sistemas de Informação — UNIFEF</h3>
+          <p>Base em engenharia de software, banco de dados relacional, APIs, estruturas de dados e projetos práticos em Java, Python e Web.</p>
+        </article>
+        <article class="timeline-card">
+          <span class="time-tag">CONCLUSÃO EM NOV/2026 (~2 SEMANAS)</span>
+          <h3>Tiro de Guerra</h3>
+          <p>Serviço em fase final de encerramento, liberando agenda integral para estágio de 30h/semana com rotina disciplinada e pontualidade.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="stack" data-section="stack">
       <div class="section-bar">
-        <h2><span class="hash">#</span> stack</h2>
-        <p>Ferramentas que uso de verdade no dia a dia.</p>
+        <div>
+          <h2><span class="hash">#</span> stack & capacidades</h2>
+          <p>Tecnologias comprovadas pelos repositórios publicados acima.</p>
+        </div>
       </div>
       <div class="stack-system">
         <div class="stack-layers">
           <article class="stack-layer" style="--level:92%">
             <span class="layer-id">L01</span>
-            <div><h3>Construção</h3><p>Python · JavaScript · HTML/CSS · SQL</p></div>
+            <div><h3>Linguagens & Web</h3><p>Python · Java 21 · JavaScript (Node.js) · HTML/CSS · SQL</p></div>
             <span class="usage">uso diário</span>
           </article>
-          <article class="stack-layer" style="--level:84%">
+          <article class="stack-layer" style="--level:86%">
             <span class="layer-id">L02</span>
-            <div><h3>Inteligência</h3><p>RAG · agentes · prompts · Hugging Face · Gradio</p></div>
-            <span class="usage">projetos</span>
+            <div><h3>IA Aplicada & Automação</h3><p>RAG · Agentes com Tools · Prompting · Gradio · pandas · python-docx</p></div>
+            <span class="usage">4 repos</span>
           </article>
-          <article class="stack-layer" style="--level:78%">
+          <article class="stack-layer" style="--level:82%">
             <span class="layer-id">L03</span>
-            <div><h3>Integração</h3><p>APIs REST · JSON · automações · n8n/Make</p></div>
-            <span class="usage">entregas</span>
+            <div><h3>Backend & Dados</h3><p>Spring Boot · Express · PostgreSQL · MySQL · Liquibase · REST APIs</p></div>
+            <span class="usage">APIs reais</span>
           </article>
           <article class="stack-layer" style="--level:88%">
             <span class="layer-id">L04</span>
-            <div><h3>Operação</h3><p>Git · GitHub · Linux · deploy · Hostinger</p></div>
+            <div><h3>Ambiente & Entrega</h3><p>Git · GitHub · Linux · Docker Compose · Deploy SSH/Hostinger · Cursor</p></div>
             <span class="usage">produção</span>
           </article>
         </div>
 
         <aside class="stack-monitor">
-          <div class="monitor-head"><span>CAPABILITY MONITOR</span><i>LIVE</i></div>
-          <svg viewBox="0 0 320 250" role="img" aria-label="Mapa de capacidades">
+          <div class="monitor-head"><span>MAPA DE COMPETÊNCIAS</span><i>VERIFICADO</i></div>
+          <svg viewBox="0 0 320 250" role="img" aria-label="Mapa de competências">
             <g class="radar-grid">
               <polygon points="160,22 287,92 256,218 64,218 33,92"/>
               <polygon points="160,58 247,106 226,192 94,192 73,106"/>
@@ -353,17 +461,17 @@
             </g>
             <polygon class="radar-value" points="160,38 260,103 225,194 82,202 54,100"/>
             <g class="radar-labels">
-              <text x="160" y="14">BUILD</text>
-              <text x="289" y="89">AI</text>
-              <text x="264" y="232">DATA</text>
-              <text x="52" y="232">OPS</text>
-              <text x="2" y="89">SHIP</text>
+              <text x="160" y="14">PRODUTO</text>
+              <text x="292" y="89">GENAI</text>
+              <text x="266" y="234">BACKEND</text>
+              <text x="52" y="234">OPS</text>
+              <text x="26" y="89">AUTOMAÇÃO</text>
             </g>
           </svg>
           <div class="monitor-stats">
-            <div><span>ambiente</span><strong>Linux</strong></div>
-            <div><span>editor</span><strong>Cursor</strong></div>
-            <div><span>modo</span><strong>shipping</strong></div>
+            <div><span>currículo</span><strong><a href="curriculo-pedro-henrique.pdf" download>PDF pronto</a></strong></div>
+            <div><span>inglês</span><strong>leitura técnica</strong></div>
+            <div><span>turno</span><strong>30h/sem</strong></div>
           </div>
         </aside>
       </div>
@@ -371,35 +479,40 @@
 
     <section class="section contato" id="contato" data-section="contato">
       <div class="section-bar">
-        <h2><span class="hash">#</span> contato</h2>
+        <div>
+          <h2><span class="hash">#</span> contato direto</h2>
+          <p>Clique para abrir ou copiar. Resposta rápida por e-mail ou LinkedIn.</p>
+        </div>
       </div>
       <div class="contact-panel">
-        <a href="mailto:phelohim@gmail.com">phelohim@gmail.com</a>
-        <a href="mailto:pedrosilva@aluno.unifef.edu.br">pedrosilva@aluno.unifef.edu.br</a>
-        <a href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">github.com/pedrosilva-png</a>
-        <a href="https://www.linkedin.com/in/pedro-henrique-rodrigues-da-silva-a65103448/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech</a>
+        <a href="mailto:phelohim@gmail.com">phelohim@gmail.com <span>e-mail principal ↗</span></a>
+        <a href="mailto:pedrosilva@aluno.unifef.edu.br">pedrosilva@aluno.unifef.edu.br <span>e-mail acadêmico ↗</span></a>
+        <a href="https://www.linkedin.com/in/pedro-henrique-rodrigues-da-silva-a65103448/" target="_blank" rel="noopener">linkedin.com/in/pedro-henrique-rodrigues-da-silva <span>perfil profissional ↗</span></a>
+        <a href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">github.com/pedrosilva-png <span>repositórios & projetos ↗</span></a>
+        <a href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech <span>produto em produção ↗</span></a>
+        <a href="curriculo-pedro-henrique.pdf" download>Baixar currículo em PDF <span>1 página · atualizado ↗</span></a>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <span>© 2026 Pedro Henrique Rodrigues da Silva</span>
+    <span>© 2026 Pedro Henrique Rodrigues da Silva · Fernandópolis/SP</span>
     <span class="mono" id="clock"></span>
   </footer>
 
   <dialog class="command-palette" id="command-palette">
     <div class="command-head">
-      <span>Ir para…</span>
+      <span>Navegação rápida</span>
       <kbd>ESC</kbd>
     </div>
     <nav>
       <a href="#topo"><span>01</span> Início <kbd>H</kbd></a>
-      <a href="#projetos"><span>02</span> Projetos <kbd>P</kbd></a>
-      <a href="#genai"><span>03</span> GenAI <kbd>G</kbd></a>
-      <a href="#stack"><span>04</span> Stack <kbd>S</kbd></a>
-      <a href="#contato"><span>05</span> Contato <kbd>C</kbd></a>
-      <a href="https://github.com/pedrosilva-png" target="_blank"><span>↗</span> GitHub <kbd>↵</kbd></a>
+      <a href="#projetos"><span>02</span> Projetos de Engenharia & Produto <kbd>P</kbd></a>
+      <a href="#genai"><span>03</span> Projetos GenAI <kbd>G</kbd></a>
+      <a href="#experiencia"><span>04</span> Experiência & Formação <kbd>E</kbd></a>
+      <a href="#stack"><span>05</span> Stack & Capacidades <kbd>S</kbd></a>
+      <a href="curriculo-pedro-henrique.pdf" download><span>PDF</span> Baixar Currículo <kbd>↓</kbd></a>
+      <a href="https://github.com/pedrosilva-png" target="_blank" rel="noopener"><span>↗</span> GitHub <kbd>↵</kbd></a>
     </nav>
   </dialog>
 

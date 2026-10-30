@@ -285,6 +285,83 @@ a { color: inherit; }
 }
 .section-bar {
   margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 5px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--mute);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--olive);
+  background: rgba(143, 159, 110, 0.14);
+  color: var(--olive-bright);
+}
+.project.is-hidden {
+  display: none !important;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.timeline-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 1.25rem 1.3rem;
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+.timeline-card:hover {
+  border-color: rgba(180, 196, 138, 0.45);
+  background: var(--panel-2);
+}
+.time-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--olive);
+  margin-bottom: 0.4rem;
+}
+.timeline-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.1rem;
+}
+.timeline-card h3 a {
+  color: var(--olive-bright);
+  text-decoration: none;
+}
+.timeline-card p {
+  margin: 0;
+  color: var(--mute);
+  font-size: 0.94rem;
+}
+.contact-panel a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.contact-panel a span {
+  font-size: 0.72rem;
+  color: var(--mute);
 }
 .section-bar h2 {
   margin: 0 0 0.4rem;
@@ -752,6 +829,7 @@ a { color: inherit; }
   .case-metrics { grid-template-columns:1fr; }
   .case-metrics>div+div { border-left:0; border-top:1px solid var(--line); padding-left:0; }
   .genai-grid { grid-template-columns:1fr; }
+  .timeline-grid { grid-template-columns:1fr; }
   .genai-card,.genai-card:first-child,.genai-card:nth-child(2),.genai-card:nth-child(3) { grid-column:auto; }
   .stack-system { grid-template-columns:1fr; }
   .stack-layer { grid-template-columns:42px 1fr; }
