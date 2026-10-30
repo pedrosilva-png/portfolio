@@ -13,6 +13,8 @@
 <body>
   <div class="grid-bg" aria-hidden="true"></div>
   <div class="orb" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
 
   <header class="topbar">
     <a class="brand" href="#topo">
@@ -26,7 +28,8 @@
       <a href="#contato">/contato</a>
     </nav>
     <div class="top-actions">
-      <a class="btn ghost" href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">GitHub</a>
+      <button type="button" class="btn command-trigger" id="command-trigger"><kbd>⌘</kbd> K</button>
+      <a class="btn ghost" href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">GitHub ↗</a>
       <button type="button" class="btn solid" id="btn-print">Export CV</button>
     </div>
   </header>
@@ -56,27 +59,62 @@
         </ul>
       </div>
 
-      <aside class="hero-terminal" aria-label="Terminal demo">
-        <div class="term-chrome">
-          <span></span><span></span><span></span>
-          <em>~/portfolio — zsh</em>
+      <aside class="systems-map" aria-label="Mapa dos projetos">
+        <div class="map-head">
+          <div>
+            <span class="map-kicker">SYSTEM MAP</span>
+            <strong>Projetos conectados</strong>
+          </div>
+          <span class="sync"><i></i> synced</span>
         </div>
-        <pre class="term-body"><code><span class="c-comment"># whoami</span>
-<span class="c-prompt">$</span> cat profile.json
-{
-  <span class="c-key">"name"</span>: <span class="c-str">"Pedro Henrique Rodrigues da Silva"</span>,
-  <span class="c-key">"role"</span>: <span class="c-str">"builder · GenAI · fullstack"</span>,
-  <span class="c-key">"company"</span>: <span class="c-str">"Cybhor Tech"</span>,
-  <span class="c-key">"stack"</span>: [<span class="c-str">"Python"</span>, <span class="c-str">"JS"</span>, <span class="c-str">"APIs"</span>, <span class="c-str">"RAG"</span>],
-  <span class="c-key">"shipping"</span>: <span class="c-bool">true</span>
-}
-
-<span class="c-prompt">$</span> ls ./projects | wc -l
-<span class="c-out">8</span>
-
-<span class="c-prompt">$</span> open cybhor.tech<span class="cursor">▌</span></code></pre>
+        <div class="map-stage">
+          <svg class="circuit" viewBox="0 0 600 470" role="img" aria-label="Cybhor conectada aos projetos">
+            <defs>
+              <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+            </defs>
+            <path class="route route-a" d="M300 235 C210 235 210 105 115 105"/>
+            <path class="route route-b" d="M300 235 C390 235 390 105 485 105"/>
+            <path class="route route-c" d="M300 235 C210 235 210 365 115 365"/>
+            <path class="route route-d" d="M300 235 C390 235 390 365 485 365"/>
+            <circle class="pulse-ring" cx="300" cy="235" r="66"/>
+            <circle class="pulse-ring delay" cx="300" cy="235" r="66"/>
+          </svg>
+          <a class="map-node core" href="https://cybhor.tech" target="_blank" rel="noopener">
+            <span>CORE</span><strong>CYBHOR</strong><small>prod · live</small>
+          </a>
+          <a class="map-node node-a" href="https://github.com/PhCybhor/CybhorTechPDV" target="_blank" rel="noopener">
+            <span>01</span><strong>PDV</strong><small>retail</small>
+          </a>
+          <a class="map-node node-b" href="https://github.com/PhCybhor/LoomaMarketplace" target="_blank" rel="noopener">
+            <span>02</span><strong>LOOMA</strong><small>marketplace</small>
+          </a>
+          <a class="map-node node-c" href="#genai">
+            <span>03</span><strong>GENAI</strong><small>3 pipelines</small>
+          </a>
+          <a class="map-node node-d" href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">
+            <span>04</span><strong>PORTAL</strong><small>internal ops</small>
+          </a>
+          <div class="packet p1"></div>
+          <div class="packet p2"></div>
+          <div class="packet p3"></div>
+        </div>
+        <div class="map-foot">
+          <span><i class="dot active"></i> 4 módulos ativos</span>
+          <span>latency 24ms</span>
+          <span id="map-time">00:00:00</span>
+        </div>
       </aside>
     </section>
+
+    <div class="tech-ticker" aria-label="Tecnologias">
+      <div class="ticker-track">
+        <span>PYTHON</span><i></i><span>JAVASCRIPT</span><i></i><span>RAG</span><i></i>
+        <span>AGENTS</span><i></i><span>APIs</span><i></i><span>LINUX</span><i></i>
+        <span>GIT</span><i></i><span>GRADIO</span><i></i><span>SHIPPING</span><i></i>
+        <span>PYTHON</span><i></i><span>JAVASCRIPT</span><i></i><span>RAG</span><i></i>
+        <span>AGENTS</span><i></i><span>APIs</span><i></i><span>LINUX</span><i></i>
+      </div>
+    </div>
 
     <section class="section" id="projetos" data-section="projetos">
       <div class="section-bar">
@@ -87,7 +125,7 @@
       <div class="project-list">
         <article class="project">
           <div class="project-visual">
-            <img src="assets/proj-cybhor.jpg" alt="" loading="lazy" />
+            <img src="assets/proj-cybhor.webp" alt="" loading="lazy" />
             <div class="frame-label">prod · live</div>
           </div>
           <div class="project-body">
@@ -111,7 +149,7 @@
 
         <article class="project">
           <div class="project-visual">
-            <img src="assets/proj-looma.jpg" alt="" loading="lazy" />
+            <img src="assets/proj-looma.webp" alt="" loading="lazy" />
             <div class="frame-label">backend · marketplace</div>
           </div>
           <div class="project-body">
@@ -133,7 +171,7 @@
 
         <article class="project">
           <div class="project-visual">
-            <img src="assets/proj-peru.jpg" alt="" loading="lazy" />
+            <img src="assets/proj-peru.webp" alt="" loading="lazy" />
             <div class="frame-label">client · ecommerce</div>
           </div>
           <div class="project-body">
@@ -154,7 +192,7 @@
 
         <article class="project">
           <div class="project-visual">
-            <img src="assets/proj-portal.jpg" alt="" loading="lazy" />
+            <img src="assets/proj-portal.webp" alt="" loading="lazy" />
             <div class="frame-label">internal · ops</div>
           </div>
           <div class="project-body">
@@ -184,7 +222,7 @@
 
       <div class="genai-grid">
         <article class="genai-card">
-          <img src="assets/proj-rag.jpg" alt="" loading="lazy" />
+          <img src="assets/proj-rag.webp" alt="" loading="lazy" />
           <div class="genai-meta">
             <span class="path">01-rag-cardapio/</span>
             <h3>RAG FAQ Delivery</h3>
@@ -198,7 +236,7 @@
           </div>
         </article>
         <article class="genai-card">
-          <img src="assets/proj-agente.jpg" alt="" loading="lazy" />
+          <img src="assets/proj-agente.webp" alt="" loading="lazy" />
           <div class="genai-meta">
             <span class="path">02-agente-ops/</span>
             <h3>Agente Ops</h3>
@@ -212,7 +250,7 @@
           </div>
         </article>
         <article class="genai-card">
-          <img src="assets/proj-auto.jpg" alt="" loading="lazy" />
+          <img src="assets/proj-auto.webp" alt="" loading="lazy" />
           <div class="genai-meta">
             <span class="path">03-automacao-relatorio/</span>
             <h3>Automação relatório</h3>
@@ -275,6 +313,21 @@
     <span>© 2026 Pedro Henrique Rodrigues da Silva</span>
     <span class="mono" id="clock"></span>
   </footer>
+
+  <dialog class="command-palette" id="command-palette">
+    <div class="command-head">
+      <span>Ir para…</span>
+      <kbd>ESC</kbd>
+    </div>
+    <nav>
+      <a href="#topo"><span>01</span> Início <kbd>H</kbd></a>
+      <a href="#projetos"><span>02</span> Projetos <kbd>P</kbd></a>
+      <a href="#genai"><span>03</span> GenAI <kbd>G</kbd></a>
+      <a href="#stack"><span>04</span> Stack <kbd>S</kbd></a>
+      <a href="#contato"><span>05</span> Contato <kbd>C</kbd></a>
+      <a href="https://github.com/pedrosilva-png" target="_blank"><span>↗</span> GitHub <kbd>↵</kbd></a>
+    </nav>
+  </dialog>
 
   <script src="app.js"></script>
 </body>

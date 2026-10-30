@@ -2,14 +2,18 @@
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const printBtn = document.getElementById("btn-print");
   const clock = document.getElementById("clock");
+  const mapTime = document.getElementById("map-time");
   const statusEl = document.getElementById("typed-status");
-  const termCode = document.querySelector(".term-body code");
+  const progress = document.getElementById("scroll-progress");
+  const palette = document.getElementById("command-palette");
+  const commandTrigger = document.getElementById("command-trigger");
 
   const pad = (n) => String(n).padStart(2, "0");
   const tick = () => {
     if (!clock) return;
     const d = new Date();
     clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} BRT`;
+    if (mapTime) mapTime.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
   };
   tick();
   setInterval(tick, 1000);
@@ -48,24 +52,6 @@
       }
     };
     setTimeout(type, 400);
-  }
-
-  // Terminal: type plain text, then swap to syntax HTML
-  if (termCode && !reduce) {
-    const fullHtml = termCode.innerHTML;
-    const plain = termCode.textContent || "";
-    termCode.textContent = "";
-    let i = 0;
-    const typeTerm = () => {
-      i += 2;
-      termCode.textContent = plain.slice(0, i);
-      if (i < plain.length) {
-        setTimeout(typeTerm, 16);
-      } else {
-        termCode.innerHTML = fullHtml;
-      }
-    };
-    setTimeout(typeTerm, 500);
   }
 
   // Scroll reveal
@@ -121,4 +107,36 @@
       { passive: true }
     );
   }
+
+  // Cursor spotlight + reading progress
+  window.addEventListener(
+    "pointermove",
+    (e) => {
+      document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--my", `${e.clientY}px`);
+    },
+    { passive: true }
+  );
+  const updateProgress = () => {
+    if (!progress) return;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${total > 0 ? (window.scrollY / total) * 100 : 0}%`;
+  };
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+
+  // Command palette: Ctrl/Cmd + K
+  const openPalette = () => {
+    if (palette && !palette.open) palette.showModal();
+  };
+  commandTrigger?.addEventListener("click", openPalette);
+  window.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      openPalette();
+    }
+  });
+  palette?.addEventListener("click", (e) => {
+    if (e.target === palette || e.target.closest("a")) palette.close();
+  });
 })();
