@@ -67,28 +67,34 @@
     });
   });
 
-  // Category filter on projects
-  const filterBtns = [...document.querySelectorAll(".filter-btn")];
-  const projects = [...document.querySelectorAll(".project[data-category]")];
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const cat = btn.getAttribute("data-filter") || "all";
-      filterBtns.forEach((b) => b.classList.toggle("active", b === btn));
-      let visibleIndex = 0;
-      projects.forEach((proj) => {
-        const match = cat === "all" || proj.getAttribute("data-category") === cat;
-        proj.classList.toggle("is-hidden", !match);
-        if (match) {
-          proj.style.setProperty("--i", String(visibleIndex));
-          visibleIndex += 1;
-        }
-      });
-    });
-  });
+  // Scrollspy: highlight current project in the sticky index
+  const spyLinks = [...document.querySelectorAll(".spy-link")];
+  const spyPanels = [...document.querySelectorAll(".spy-panel")];
+  const spyNav = document.querySelector(".spy-nav");
+  if (spyLinks.length && spyPanels.length) {
+    const byId = new Map(spyLinks.map((l) => [l.getAttribute("href").slice(1), l]));
+    const setActive = (id) => {
+      spyLinks.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === `#${id}`));
+      spyPanels.forEach((p) => p.classList.toggle("is-current", p.id === id));
+      const link = byId.get(id);
+      if (link && spyNav && spyNav.scrollWidth > spyNav.clientWidth) {
+        spyNav.scrollTo({ left: link.offsetLeft - 16, behavior: "smooth" });
+      }
+    };
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+    );
+    spyPanels.forEach((p) => spy.observe(p));
+  }
 
   // Scroll reveal
   document
-    .querySelectorAll(".project, .genai-card, .timeline-card, .stack-layer, .stack-monitor, .contact-panel")
+    .querySelectorAll(".spy-panel, .timeline-card, .stack-layer, .stack-monitor, .contact-panel")
     .forEach((el, idx) => {
       el.classList.add("reveal");
       el.style.transitionDelay = `${(idx % 4) * 0.06}s`;

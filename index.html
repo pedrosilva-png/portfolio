@@ -117,269 +117,121 @@
     <section class="section" id="projetos" data-section="projetos">
       <div class="section-bar">
         <div>
-          <h2><span class="hash">#</span> projetos de engenharia & produto</h2>
-          <p>Sistemas reais, automações e APIs construídas no computador e publicadas no GitHub.</p>
-        </div>
-        <div class="filter-bar" role="tablist" aria-label="Filtrar projetos">
-          <button type="button" class="filter-btn active" data-filter="all">Todos (6)</button>
-          <button type="button" class="filter-btn" data-filter="produto">Produto & Cliente</button>
-          <button type="button" class="filter-btn" data-filter="backend">Backend & API</button>
-          <button type="button" class="filter-btn" data-filter="automacao">Automação TI</button>
+          <h2><span class="hash">#</span> projetos</h2>
+          <p>Nove repositórios públicos — produto, backend, automação e GenAI. Use o índice para navegar; cada painel resume o essencial sem ocupar a tela inteira.</p>
         </div>
       </div>
-
-      <div class="project-list">
-        <article class="project" data-category="produto" style="--i:0">
-          <div class="project-visual">
-            <img src="assets/proj-cybhor.webp" alt="Arquitetura Cybhor Tech" loading="lazy" />
-            <div class="frame-label">produção · domínio próprio</div>
-            <span class="project-no">01</span>
-          </div>
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Cybhor Tech & Cybhor PDV</h3>
-              <span class="badge live">EM PRODUÇÃO · 1 CLIENTE</span>
-            </div>
-            <p>Iniciativa própria de software para comércio e negócios locais: site institucional, sistema PDV e entregas sob medida. Desenvolvido de ponta a ponta com apoio de IA, publicado em produção e já operando com cliente real.</p>
-            <dl class="case-metrics">
-              <div><dt>status</dt><dd>cybhor.tech no ar</dd></div>
-              <div><dt>escopo</dt><dd>site + PDV + deploy</dd></div>
-              <div><dt>validação</dt><dd>1 cliente ativo</dd></div>
-            </dl>
-            <ul class="tech">
-              <li>JavaScript</li>
-              <li>HTML/CSS</li>
-              <li>Python Build</li>
-              <li>Deploy SSH/Hostinger</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://cybhor.tech" target="_blank" rel="noopener">Abrir site ao vivo ↗</a>
-              <a href="https://github.com/pedrosilva-png/CybhorTech" target="_blank" rel="noopener">Repo Site ↗</a>
-              <a href="https://github.com/pedrosilva-png/CybhorTechPDV" target="_blank" rel="noopener">Repo PDV ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project" data-category="backend" style="--i:1">
-          <div class="project-visual">
-            <img src="assets/proj-java-api.webp" alt="Arquitetura API Spring Boot" loading="lazy" />
-            <div class="frame-label">java 21 · spring boot · postgresql</div>
-            <span class="project-no">02</span>
-          </div>
-          <div class="project-body">
-            <div class="project-head">
-              <h3>API REST de Controle de Estoque (Papelaria)</h3>
-              <span class="badge">JAVA 21 · SPRING BOOT</span>
-            </div>
-            <p>API REST completa com entidades de domínio ricas (sem modelo anêmico), controle transacional de saldo, fornecedores por CNPJ, migrações versionadas com Liquibase, Docker Compose e suíte de testes de integração.</p>
-            <dl class="case-metrics">
-              <div><dt>arquitetura</dt><dd>Controller · Service · Domain</dd></div>
-              <div><dt>banco</dt><dd>PostgreSQL + Liquibase</dd></div>
-              <div><dt>qualidade</dt><dd>testes JUnit/JPA</dd></div>
-            </dl>
-            <ul class="tech">
-              <li>Java 21</li>
-              <li>Spring Boot</li>
-              <li>JPA / Hibernate</li>
-              <li>Liquibase</li>
-              <li>PostgreSQL</li>
-              <li>Docker</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/pedrosilva-png/papelaria-estoque-api" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project" data-category="automacao" style="--i:2">
-          <div class="project-visual">
-            <img src="assets/proj-patrimonio.webp" alt="Automação de levantamento patrimonial" loading="lazy" />
-            <div class="frame-label">python · automação documental</div>
-            <span class="project-no">03</span>
-          </div>
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Automação de Levantamento Patrimonial</h3>
-              <span class="badge live">PROBLEMA REAL DE TI</span>
-            </div>
-            <p>Ferramenta em Python criada para eliminar a montagem manual de relatórios de bens patrimoniais: valida o JSON do inventário, confere as fotos de cada item e gera automaticamente o documento A4 `.docx` padronizado.</p>
-            <dl class="case-metrics">
-              <div><dt>entrada</dt><dd>JSON + fotos dos bens</dd></div>
-              <div><dt>saída</dt><dd>Relatório .docx A4</dd></div>
-              <div><dt>ganho</dt><dd>zero formatação manual</dd></div>
-            </dl>
-            <ul class="tech">
-              <li>Python</li>
-              <li>python-docx</li>
-              <li>Pillow</li>
-              <li>Validação de dados</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/pedrosilva-png/automacao-levantamento-patrimonial" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project" data-category="backend" style="--i:3">
-          <div class="project-visual">
-            <img src="assets/proj-looma.webp" alt="Arquitetura Looma Marketplace" loading="lazy" />
-            <div class="frame-label">node.js · express · mysql</div>
-            <span class="project-no">04</span>
-          </div>
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Looma Marketplace</h3>
-              <span class="badge">MULTI-VENDOR</span>
-            </div>
-            <p>Plataforma de marketplace multi-lojista com autenticação, rotas separadas por camada (`controllers`, `services`, `middlewares`), migrações SQL e painel para vendedores e catálogo.</p>
-            <dl class="case-metrics">
-              <div><dt>modelo</dt><dd>multi-vendor</dd></div>
-              <div><dt>persistência</dt><dd>MySQL relacional</dd></div>
-              <div><dt>backend</dt><dd>Node.js + Express</dd></div>
-            </dl>
-            <ul class="tech">
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>MySQL</li>
-              <li>REST</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/pedrosilva-png/LoomaMarketplace" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project" data-category="produto" style="--i:4">
-          <div class="project-visual">
-            <img src="assets/proj-peru.webp" alt="E-commerce PERUOFICIAL" loading="lazy" />
-            <div class="frame-label">cliente · e-commerce</div>
-            <span class="project-no">05</span>
-          </div>
-          <div class="project-body">
-            <div class="project-head">
-              <h3>PERUOFICIAL — E-commerce</h3>
-              <span class="badge live">PROJETO CLIENTE</span>
-            </div>
-            <p>Vitrine digital e fluxo de compra para loja física iniciando operação online, com foco em carregamento rápido, catálogo claro e atendimento móvel.</p>
-            <dl class="case-metrics">
-              <div><dt>contexto</dt><dd>loja física → online</dd></div>
-              <div><dt>foco</dt><dd>conversão mobile</dd></div>
-              <div><dt>entrega</dt><dd>Cybhor Tech</dd></div>
-            </dl>
-            <ul class="tech">
-              <li>JavaScript</li>
-              <li>HTML/CSS</li>
-              <li>UI Responsiva</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/PhCybhor/PERUOFICIAL" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project" data-category="produto" style="--i:5">
-          <div class="project-visual">
-            <img src="assets/proj-portal.webp" alt="Portal Cybhor" loading="lazy" />
-            <div class="frame-label">operações internas · web + php</div>
-            <span class="project-no">06</span>
-          </div>
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Portal Cybhor v2</h3>
-              <span class="badge">OPS INTERNA</span>
-            </div>
-            <p>Portal interno para acompanhamento de tarefas, progresso da equipe e leitura de commits/entregas da Cybhor, com versão web e adaptação mobile.</p>
-            <dl class="case-metrics">
-              <div><dt>módulos</dt><dd>tarefas + commits</dd></div>
-              <div><dt>backend leve</dt><dd>PHP + SQL</dd></div>
-              <div><dt>deploy</dt><dd>GitHub Actions</dd></div>
-            </dl>
-            <ul class="tech">
-              <li>JavaScript</li>
-              <li>PHP</li>
-              <li>SQL</li>
-              <li>GitHub Actions</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">Repo v2 ↗</a>
-              <a href="https://github.com/PhCybhor/portalCybhorMobile" target="_blank" rel="noopener">Repo Mobile ↗</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section genai" id="genai" data-section="genai">
-      <div class="section-bar">
-        <div>
-          <h2><span class="hash">#</span> projetos genai (repositórios independentes)</h2>
-          <p>Três aplicações separadas em Python — cada uma em seu próprio repositório público com README e execução local.</p>
+      <div class="projects-spy" id="projectsSpy">
+        <aside class="spy-nav" aria-label="Índice de projetos">
+          <div class="spy-nav-label">Produto &amp; engenharia · 06</div>
+          <ol class="spy-list">
+            <li><a class="spy-link is-active" href="#proj-cybhor"><span class="num">01</span><span class="label">Cybhor Tech &amp; PDV</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-papelaria"><span class="num">02</span><span class="label">API de Estoque · Java</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-patrimonio"><span class="num">03</span><span class="label">Automação Patrimonial</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-looma"><span class="num">04</span><span class="label">Looma Marketplace</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-peru"><span class="num">05</span><span class="label">PERUOFICIAL</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-portal"><span class="num">06</span><span class="label">Portal Cybhor</span><span class="dot" aria-hidden="true"></span></a></li>
+          </ol>
+          <div class="spy-nav-label">GenAI · 03 repositórios</div>
+          <ol class="spy-list">
+            <li><a class="spy-link" href="#proj-rag"><span class="num">07</span><span class="label">RAG FAQ Delivery</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-agente"><span class="num">08</span><span class="label">Agente Ops</span><span class="dot" aria-hidden="true"></span></a></li>
+            <li><a class="spy-link" href="#proj-relatorio"><span class="num">09</span><span class="label">Automação de Relatório</span><span class="dot" aria-hidden="true"></span></a></li>
+          </ol>
+        </aside>
+        <div class="spy-panels">
+          <article class="spy-panel" id="proj-cybhor">
+            <div class="spy-meta"><span>01 / PRODUTO</span><span>EM PRODUÇÃO · 1 CLIENTE</span></div>
+            <div class="spy-main"><div>
+              <h3>Cybhor Tech <em>&amp; PDV</em></h3>
+              <p class="spy-lead">Software próprio para comércio local: site institucional, sistema PDV e entregas sob medida — do levantamento ao deploy.</p>
+              <div class="spy-cols"><div><h4>— RESULTADOS</h4><ul><li>cybhor.tech no ar, domínio próprio</li><li>Cliente real em operação</li><li>Deploy e manutenção contínuos</li></ul></div></div>
+              <p class="spy-stack">JavaScript · HTML/CSS · Deploy Hostinger</p>
+            </div><img src="assets/proj-cybhor.webp" alt="Arquitetura Cybhor Tech" loading="lazy" /></div>
+            <div class="spy-foot"><span>PRODUTO PRÓPRIO</span><span class="spy-links"><a href="https://cybhor.tech" target="_blank" rel="noopener">Site ao vivo →</a><a href="https://github.com/pedrosilva-png/CybhorTech" target="_blank" rel="noopener">Repo site</a><a href="https://github.com/pedrosilva-png/CybhorTechPDV" target="_blank" rel="noopener">Repo PDV</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-papelaria">
+            <div class="spy-meta"><span>02 / BACKEND</span><span>JAVA 21 · SPRING BOOT</span></div>
+            <div class="spy-main"><div>
+              <h3>API de <em>Estoque</em></h3>
+              <p class="spy-lead">API REST de papelaria com domínio rico, controle transacional de saldo e fornecedores por CNPJ.</p>
+              <div class="spy-cols"><div><h4>— DESTAQUES</h4><ul><li>Controller · Service · Domain</li><li>PostgreSQL + migrações Liquibase</li><li>Testes JUnit/JPA e Docker Compose</li></ul></div></div>
+              <p class="spy-stack">Java 21 · Spring Boot · JPA · PostgreSQL · Liquibase</p>
+            </div><img src="assets/proj-java-api.webp" alt="Arquitetura API Spring Boot" loading="lazy" /></div>
+            <div class="spy-foot"><span>BACKEND COMPLETO</span><span class="spy-links"><a href="https://github.com/pedrosilva-png/papelaria-estoque-api" target="_blank" rel="noopener">Ver código →</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-patrimonio">
+            <div class="spy-meta"><span>03 / AUTOMAÇÃO</span><span>PYTHON · TI PÚBLICA</span></div>
+            <div class="spy-main"><div>
+              <h3>Levantamento <em>Patrimonial</em></h3>
+              <p class="spy-lead">Elimina a montagem manual de relatórios de bens: valida o JSON do inventário, confere as fotos e gera o documento A4 padronizado.</p>
+              <div class="spy-cols"><div><h4>— DESTAQUES</h4><ul><li>Entrada: JSON + fotos dos bens</li><li>Saída: relatório .docx A4</li><li>Zero formatação manual</li></ul></div></div>
+              <p class="spy-stack">Python · python-docx · Pillow</p>
+            </div><img src="assets/proj-patrimonio.webp" alt="Automação de levantamento patrimonial" loading="lazy" /></div>
+            <div class="spy-foot"><span>PROBLEMA REAL DE TI</span><span class="spy-links"><a href="https://github.com/pedrosilva-png/automacao-levantamento-patrimonial" target="_blank" rel="noopener">Ver código →</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-looma">
+            <div class="spy-meta"><span>04 / BACKEND</span><span>NODE.JS · MARKETPLACE</span></div>
+            <div class="spy-main"><div>
+              <h3>Looma <em>Marketplace</em></h3>
+              <p class="spy-lead">Marketplace multi-lojista com autenticação, camadas separadas e painel para vendedores e catálogo.</p>
+              <div class="spy-cols"><div><h4>— DESTAQUES</h4><ul><li>Modelo multi-vendor</li><li>Controllers · services · middlewares</li><li>MySQL relacional + migrações SQL</li></ul></div></div>
+              <p class="spy-stack">Node.js · Express · MySQL · REST</p>
+            </div><img src="assets/proj-looma.webp" alt="Arquitetura Looma Marketplace" loading="lazy" /></div>
+            <div class="spy-foot"><span>PLATAFORMA COMPLETA</span><span class="spy-links"><a href="https://github.com/pedrosilva-png/LoomaMarketplace" target="_blank" rel="noopener">Ver código →</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-peru">
+            <div class="spy-meta"><span>05 / PRODUTO</span><span>CLIENTE · E-COMMERCE</span></div>
+            <div class="spy-main"><div>
+              <h3>PERU <em>OFICIAL</em></h3>
+              <p class="spy-lead">Vitrine digital e fluxo de compra para loja física iniciando operação online, com foco em mobile.</p>
+              <div class="spy-cols"><div><h4>— DESTAQUES</h4><ul><li>Loja física → canal digital</li><li>Catálogo claro e responsivo</li><li>Entrega via Cybhor Tech</li></ul></div></div>
+              <p class="spy-stack">JavaScript · HTML/CSS · UI responsiva</p>
+            </div><img src="assets/proj-peru.webp" alt="E-commerce PERUOFICIAL" loading="lazy" /></div>
+            <div class="spy-foot"><span>PROJETO CLIENTE</span><span class="spy-links"><a href="https://github.com/PhCybhor/PERUOFICIAL" target="_blank" rel="noopener">Ver código →</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-portal">
+            <div class="spy-meta"><span>06 / PRODUTO</span><span>OPS INTERNA · WEB + PHP</span></div>
+            <div class="spy-main"><div>
+              <h3>Portal <em>Cybhor v2</em></h3>
+              <p class="spy-lead">Portal interno para tarefas, progresso da equipe e leitura de commits/entregas, com versão mobile.</p>
+              <div class="spy-cols"><div><h4>— DESTAQUES</h4><ul><li>Módulos de tarefas + commits</li><li>Backend leve PHP + SQL</li><li>Deploy via GitHub Actions</li></ul></div></div>
+              <p class="spy-stack">JavaScript · PHP · SQL · GitHub Actions</p>
+            </div><img src="assets/proj-portal.webp" alt="Portal Cybhor" loading="lazy" /></div>
+            <div class="spy-foot"><span>USO INTERNO REAL</span><span class="spy-links"><a href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">Repo v2 →</a><a href="https://github.com/PhCybhor/portalCybhorMobile" target="_blank" rel="noopener">Mobile</a></span></div>
+          </article>
+          <div class="spy-group-label" id="genai">GenAI — repositórios independentes em Python</div>
+          <article class="spy-panel" id="proj-rag">
+            <div class="spy-meta"><span>07 / GENAI</span><span>rag-faq-delivery</span></div>
+            <div class="spy-main"><div>
+              <h3>RAG FAQ <em>Delivery</em></h3>
+              <p class="spy-lead">Recuperação TF-IDF, classificação de intenção e resposta grounded com citação da fonte; interface Gradio e dataset para Hugging Face.</p>
+              <div class="spy-cols"><div><h4>— PIPELINE</h4><ul><li>query → retrieve → ground → answer</li><li>intent: “pagamento_duplicado”</li><li>3 fontes · grounded: true</li></ul></div></div>
+              <p class="spy-stack">Python · scikit-learn · Gradio · HF Dataset</p>
+            </div><img src="assets/proj-rag.webp" alt="Pipeline RAG FAQ Delivery" loading="lazy" /></div>
+            <div class="spy-foot"><span>REPO PRÓPRIO</span><span class="spy-links"><a href="https://github.com/pedrosilva-png/rag-faq-delivery" target="_blank" rel="noopener">Abrir repositório →</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-agente">
+            <div class="spy-meta"><span>08 / GENAI</span><span>agente-ops-delivery</span></div>
+            <div class="spy-main"><div>
+              <h3>Agente <em>Ops</em></h3>
+              <p class="spy-lead">Orquestra 5 ferramentas de triagem operacional — pedido, atrasos, prioridade, ação e SLA — com trace JSON auditável.</p>
+              <div class="spy-cols"><div><h4>— PIPELINE</h4><ul><li>plan → tools → trace → reply</li><li>tool: consultar_pedido(“IF-10025”)</li><li>prioridade alta · SLA 15 min</li></ul></div></div>
+              <p class="spy-stack">Python · Tool calling · Trace JSON · Gradio</p>
+            </div><img src="assets/proj-agente.webp" alt="Pipeline Agente Ops Delivery" loading="lazy" /></div>
+            <div class="spy-foot"><span>REPO PRÓPRIO</span><span class="spy-links"><a href="https://github.com/pedrosilva-png/agente-ops-delivery" target="_blank" rel="noopener">Abrir repositório →</a></span></div>
+          </article>
+          <article class="spy-panel" id="proj-relatorio">
+            <div class="spy-meta"><span>09 / GENAI</span><span>automacao-relatorio-pedidos</span></div>
+            <div class="spy-main"><div>
+              <h3>Automação de <em>Relatório</em></h3>
+              <p class="spy-lead">Processa CSV de pedidos, calcula KPIs e alertas e gera relatório em Markdown + manifesto compatível com n8n/Make.</p>
+              <div class="spy-cols"><div><h4>— IMPACTO</h4><ul><li>Manual: ~50 min/dia</li><li>Script: &lt; 1 s</li><li>Economia: ~4 h/semana</li></ul></div></div>
+              <p class="spy-stack">Python · pandas · KPIs · n8n/Make JSON</p>
+            </div><img src="assets/proj-auto.webp" alt="Pipeline Automação de Relatório" loading="lazy" /></div>
+            <div class="spy-foot"><span>REPO PRÓPRIO</span><span class="spy-links"><a href="https://github.com/pedrosilva-png/automacao-relatorio-pedidos" target="_blank" rel="noopener">Abrir repositório →</a></span></div>
+          </article>
         </div>
-      </div>
-
-      <div class="genai-grid">
-        <article class="genai-card">
-          <img src="assets/proj-rag.webp" alt="Pipeline RAG FAQ Delivery" loading="lazy" />
-          <div class="genai-meta">
-            <span class="path">pedrosilva-png/rag-faq-delivery</span>
-            <h3>RAG Cardápio & FAQ de Delivery</h3>
-            <p>Recuperação TF-IDF, classificação de intenção e resposta grounded com citação da fonte, interface Gradio e exportação para Hugging Face Datasets.</p>
-            <div class="pipeline" aria-label="Pipeline RAG">
-              <span>query</span><i></i><span>retrieve</span><i></i><span>ground</span><i></i><span>answer</span>
-            </div>
-            <pre><code><b>intent</b>: "pagamento_duplicado"
-<b>sources</b>: 3 · <b>grounded</b>: true</code></pre>
-            <ul class="tech">
-              <li>Python</li>
-              <li>scikit-learn</li>
-              <li>Gradio</li>
-              <li>HF Dataset</li>
-            </ul>
-            <a href="https://github.com/pedrosilva-png/rag-faq-delivery" target="_blank" rel="noopener">Abrir repositório ↗</a>
-          </div>
-        </article>
-
-        <article class="genai-card">
-          <img src="assets/proj-agente.webp" alt="Pipeline Agente Ops Delivery" loading="lazy" />
-          <div class="genai-meta">
-            <span class="path">pedrosilva-png/agente-ops-delivery</span>
-            <h3>Agente de Operações com Tools</h3>
-            <p>Orquestra 5 ferramentas para triagem de tickets operacionais: consulta pedido, lista atrasos, classifica prioridade, sugere ação e calcula SLA com trace JSON auditável.</p>
-            <div class="pipeline" aria-label="Pipeline do agente">
-              <span>plan</span><i></i><span>tools</span><i></i><span>trace</span><i></i><span>reply</span>
-            </div>
-            <pre><code><b>tool</b>: consultar_pedido("IF-10025")
-<b>priority</b>: alta · <b>sla</b>: 15 min</code></pre>
-            <ul class="tech">
-              <li>Python</li>
-              <li>Tool Calling</li>
-              <li>Trace JSON</li>
-              <li>Gradio</li>
-            </ul>
-            <a href="https://github.com/pedrosilva-png/agente-ops-delivery" target="_blank" rel="noopener">Abrir repositório ↗</a>
-          </div>
-        </article>
-
-        <article class="genai-card">
-          <img src="assets/proj-auto.webp" alt="Pipeline Automação de Relatório" loading="lazy" />
-          <div class="genai-meta">
-            <span class="path">pedrosilva-png/automacao-relatorio-pedidos</span>
-            <h3>Automação de Relatório Operacional</h3>
-            <p>Processa CSV de pedidos, calcula GMV, cancelamentos e atrasos, dispara alertas e gera relatório em Markdown + manifesto compatível com n8n/Make.</p>
-            <div class="pipeline" aria-label="Pipeline da automação">
-              <span>CSV</span><i></i><span>KPIs</span><i></i><span>alert</span><i></i><span>report</span>
-            </div>
-            <pre><code><b>manual</b>: ~50 min/dia
-<b>script</b>: &lt;1 s · <b>economia</b>: ~4h/sem</code></pre>
-            <ul class="tech">
-              <li>Python</li>
-              <li>pandas</li>
-              <li>KPIs</li>
-              <li>n8n / Make JSON</li>
-            </ul>
-            <a href="https://github.com/pedrosilva-png/automacao-relatorio-pedidos" target="_blank" rel="noopener">Abrir repositório ↗</a>
-          </div>
-        </article>
       </div>
     </section>
 
