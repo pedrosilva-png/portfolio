@@ -206,11 +206,11 @@ a { color: inherit; }
 /* Nome em destaque: primeira coisa que o recrutador lê no hero */
 .hero h1.hero-name {
   margin: 0;
-  font-size: clamp(2.8rem, 8.4vw, 6.4rem);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  font-size: clamp(3.4rem, 10.5vw, 7.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   font-weight: 700;
-  max-width: 18ch;
+  max-width: 16ch;
 }
 .hero-name .accent { color: var(--olive-bright); }
 .hero-name .word {
@@ -220,19 +220,20 @@ a { color: inherit; }
   animation: word-in 0.7s var(--ease) forwards;
 }
 .hero-tagline {
-  margin: 0 0 1rem;
-  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-  color: var(--text);
+  margin: 0.85rem 0 0;
+  max-width: 36rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  line-height: 1.35;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--mute);
 }
 @keyframes word-in {
   to { opacity: 1; transform: none; }
 }
 
 .lede {
-  margin: 1.15rem 0 1.4rem;
+  margin: 0 0 1.4rem;
   color: var(--mute);
   max-width: 36rem;
 }
@@ -873,7 +874,7 @@ a { color: inherit; }
 
 @media (min-width: 1200px) {
   .hero { max-width: 1380px; padding-inline: 3rem; }
-  .hero-name { font-size: clamp(3.8rem, 7.2vw, 6.8rem); }
+  .hero h1.hero-name { font-size: clamp(4.2rem, 8.2vw, 8rem); }
   .section { max-width: 1320px; }
   .systems-map { min-width: 560px; }
 }
