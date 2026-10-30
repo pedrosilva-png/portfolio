@@ -27,6 +27,21 @@
     syncThemeToggle();
   });
 
+  // Tiro de Guerra: texto "servindo" até 28/11/2026; depois, concluído
+  const tiroCard = document.getElementById("tiro-de-guerra");
+  const tiroTag = document.getElementById("tiro-tag");
+  const tiroCopy = document.getElementById("tiro-copy");
+  if (tiroCard && tiroTag && tiroCopy) {
+    const end = tiroCard.dataset.end || "2026-11-28";
+    const [y, m, d] = end.split("-").map(Number);
+    const cutoff = new Date(y, m - 1, d + 1); // a partir do dia seguinte ao fim
+    if (new Date() >= cutoff) {
+      tiroTag.textContent = "CONCLUÍDO · NOV/2026";
+      tiroCopy.textContent =
+        "Finalizei o serviço no Exército Brasileiro — um ano de dificuldades e superações, com aprimoramento da responsabilidade e do cumprimento do dever.";
+    }
+  }
+
   const pad = (n) => String(n).padStart(2, "0");
   const tick = () => {
     if (!clock) return;
