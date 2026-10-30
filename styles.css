@@ -14,6 +14,55 @@
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --rad: 6px;
+  /* Superfícies com cor fixa no tema escuro (sobrescritas no tema claro) */
+  --topbar-bg: rgba(7, 8, 6, 0.88);
+  --str: #d5ddc4;
+  --map-bg: rgba(14, 16, 13, 0.94);
+  --node-bg: rgba(21, 25, 18, 0.98);
+  --node-core-bg: #1a2014;
+  --monitor-bg: #0b0d0a;
+  --palette-bg: #0d100c;
+  --genai-bg: #090b08;
+  color-scheme: dark;
+}
+
+/* —— tema claro: fundo off-white oliva, texto escuro, oliva como destaque —— */
+[data-theme="light"] {
+  --bg: #f3f4ec;
+  --bg-2: #e9ebdd;
+  --panel: #fbfcf6;
+  --panel-2: #edf0df;
+  --olive: #5c6f3c;
+  --olive-bright: #42551f;
+  --olive-dim: #7d8c5e;
+  --text: #1d2115;
+  --mute: #57624c;
+  --line: rgba(92, 111, 60, 0.38);
+  --topbar-bg: rgba(243, 244, 236, 0.92);
+  --str: #42551f;
+  --map-bg: #f8f9f1;
+  --node-bg: #ffffff;
+  --node-core-bg: #e2e8cd;
+  --monitor-bg: #f8f9f1;
+  --palette-bg: #fbfcf6;
+  --genai-bg: #eef0e1;
+  color-scheme: light;
+}
+/* No claro, texto sobre o oliva (mais escuro) precisa ser claro */
+[data-theme="light"] .btn.solid,
+[data-theme="light"] .badge.live { color: #fbfcf6; }
+[data-theme="light"] .tech-ticker { color: #fbfcf6; }
+[data-theme="light"] .tech-ticker i { background: #fbfcf6; }
+/* Moldura escura intencional p/ diagramas escuros (mapa/monitor já têm fundo var.) */
+[data-theme="light"] .spy-main img,
+[data-theme="light"] .genai-card img { background: #141810; border-color: rgba(29, 33, 21, 0.55); }
+[data-theme="light"] .project-no { color: rgba(92, 111, 60, 0.28); }
+[data-theme="light"] .route { stroke: rgba(92, 111, 60, 0.6); }
+[data-theme="light"] .pulse-ring { stroke: rgba(92, 111, 60, 0.35); }
+/* Transição sutil de tema (prefers-reduced-motion já zera transitions abaixo) */
+body, .topbar, .spy-nav, .spy-panel, .contact-panel,
+.systems-map, .stack-monitor, .command-palette {
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -53,7 +102,7 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1.4rem;
-  background: rgba(7, 8, 6, 0.88);
+  background: var(--topbar-bg);
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -146,6 +195,16 @@ a { color: inherit; }
   0%, 100% { opacity: 1; }
   50% { opacity: 0.25; }
 }
+
+/* Nome em destaque: primeira coisa que o recrutador lê no hero */
+.hero-name {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+.hero-name span { color: var(--olive-bright); }
 
 .hero h1 {
   margin: 0;
@@ -264,7 +323,7 @@ a { color: inherit; }
 .c-comment { color: var(--mute); }
 .c-prompt { color: var(--olive-bright); }
 .c-key { color: var(--olive); }
-.c-str { color: #d5ddc4; }
+.c-str { color: var(--str); }
 .c-bool { color: var(--olive-bright); }
 .c-out { color: var(--olive-bright); }
 .cursor {
@@ -619,7 +678,7 @@ a { color: inherit; }
 
 .systems-map {
   border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
-  background: rgba(14,16,13,.94); opacity: 0;
+  background: var(--map-bg); opacity: 0;
   transform: translateX(24px) scale(.98);
   animation: term-in .8s var(--ease) .2s forwards;
   box-shadow: 0 28px 80px rgba(0,0,0,.52);
@@ -645,7 +704,7 @@ a { color: inherit; }
 @keyframes map-pulse { 0%{transform:scale(.7);opacity:0} 25%{opacity:.7} 100%{transform:scale(1.5);opacity:0} }
 .map-node {
   position: absolute; z-index: 2; width: 118px; min-height: 74px; padding: .65rem .7rem;
-  border: 1px solid rgba(143,159,110,.34); background: rgba(21,25,18,.98); border-radius: 6px;
+  border: 1px solid rgba(143,159,110,.34); background: var(--node-bg); border-radius: 6px;
   font-family: var(--mono); text-decoration: none; display: grid; gap: .1rem;
   transition: border-color .2s var(--ease),background .2s var(--ease),transform .25s var(--ease);
 }
@@ -655,7 +714,7 @@ a { color: inherit; }
 .map-node small { font-size: .58rem; color: var(--mute); }
 .map-node.core {
   left: 50%; top: 50%; width: 136px; min-height: 88px; translate: -50% -50%;
-  border-color: var(--olive); background: #1a2014; box-shadow: 0 0 0 6px rgba(143,159,110,.06);
+  border-color: var(--olive); background: var(--node-core-bg); box-shadow: 0 0 0 6px rgba(143,159,110,.06);
   align-content: center; text-align: center;
 }
 .node-a { left: 4%; top: 11%; } .node-b { right: 4%; top: 11%; }
@@ -675,7 +734,7 @@ a { color: inherit; }
 
 .command-palette {
   width:min(520px,calc(100vw - 2rem)); border:1px solid rgba(180,196,138,.42);
-  border-radius:9px; padding:0; color:var(--text); background:#0d100c;
+  border-radius:9px; padding:0; color:var(--text); background:var(--palette-bg);
   box-shadow:0 30px 90px rgba(0,0,0,.72);
 }
 .command-palette::backdrop { background:rgba(0,0,0,.72); }
@@ -726,7 +785,7 @@ a { color: inherit; }
   background:
     linear-gradient(rgba(143,159,110,.035) 1px,transparent 1px),
     linear-gradient(90deg,rgba(143,159,110,.035) 1px,transparent 1px),
-    #090b08;
+    var(--genai-bg);
   background-size:32px 32px;
 }
 .genai-grid { grid-template-columns:repeat(12,1fr); gap:1rem; }
@@ -782,7 +841,7 @@ a { color: inherit; }
 .stack-layer p { margin:0; color:var(--mute); font:.78rem var(--mono); }
 .usage { font:.62rem var(--mono); color:var(--olive-bright); border:1px solid var(--line); padding:.25rem .45rem; border-radius:3px; }
 .stack-monitor {
-  border:1px solid var(--line); border-radius:8px; background:#0b0d0a; overflow:hidden;
+  border:1px solid var(--line); border-radius:8px; background:var(--monitor-bg); overflow:hidden;
 }
 .monitor-head {
   display:flex; justify-content:space-between; padding:.75rem .85rem;
@@ -818,6 +877,7 @@ a { color: inherit; }
   .stack-grid {
     grid-template-columns: 1fr;
   }
+  .topbar { flex-wrap: wrap; }
   .topbar nav { display: none; }
   .quick-stats { grid-template-columns: repeat(2, 1fr); }
   .project-visual { min-height: 180px; }
@@ -965,6 +1025,12 @@ a { color: inherit; }
   .spy-main img { width: 100%; height: 150px; order: -1; }
   .spy-panel { padding: 0.95rem; scroll-margin-top: 118px; }
   .spy-group-label { scroll-margin-top: 118px; }
+}
+
+/* Com o botão de tema, a topbar precisa de mais fôlego em larguras médias */
+@media (max-width: 1240px) {
+  .topbar nav { display: none; }
+  .command-trigger { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

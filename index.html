@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Aplica o tema salvo antes da pintura para não piscar (padrão: escuro)
+    try {
+      if (localStorage.getItem("portfolio-theme") === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch (e) { /* sem localStorage: fica no tema escuro */ }
+  </script>
 </head>
 <body>
   <div class="grid-bg" aria-hidden="true"></div>
@@ -29,6 +37,7 @@
       <a href="#contato">/contato</a>
     </nav>
     <div class="top-actions">
+      <button type="button" class="btn ghost theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Alternar para tema claro"><span class="theme-icon" aria-hidden="true">☀</span> <span class="theme-label">Tema claro</span></button>
       <button type="button" class="btn command-trigger" id="command-trigger"><kbd>⌘</kbd> K</button>
       <a class="btn ghost" href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">GitHub ↗</a>
       <a class="btn solid" href="curriculo-pedro-henrique.pdf" download>Baixar CV (PDF)</a>
@@ -42,9 +51,10 @@
           <span class="led"></span>
           <span id="typed-status">disponível para estágio / júnior · ~30h/semana</span>
         </p>
+        <p class="hero-name">Pedro Henrique<br /><span>Rodrigues da Silva</span></p>
         <h1>Software que<br />sai do notebook<br />e vai pra produção.</h1>
         <p class="lede">
-          <strong>Pedro Henrique Rodrigues da Silva</strong> · 19 anos · Sistemas de Informação (4º/8, formatura 2º sem/2028).<br />
+          19 anos · Sistemas de Informação (4º/8, formatura 2º sem/2028).<br />
           Estágio de TI na Prefeitura de Fernandópolis, fundador da <a href="https://cybhor.tech" target="_blank" rel="noopener">Cybhor Tech</a>
           (produto com cliente ativo) e criador de automações, APIs e pipelines GenAI.
         </p>
@@ -260,9 +270,9 @@
           <p>Base em engenharia de software, banco de dados relacional, APIs, estruturas de dados e projetos práticos em Java, Python e Web.</p>
         </article>
         <article class="timeline-card">
-          <span class="time-tag">CONCLUSÃO EM NOV/2026 (~2 SEMANAS)</span>
+          <span class="time-tag">ATUAL · CONCLUSÃO EM 2026</span>
           <h3>Tiro de Guerra</h3>
-          <p>Serviço em fase final de encerramento, liberando agenda integral para estágio de 30h/semana com rotina disciplinada e pontualidade.</p>
+          <p>Servindo, com conclusão em 2026.</p>
         </article>
       </div>
     </section>

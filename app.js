@@ -6,6 +6,27 @@
   const palette = document.getElementById("command-palette");
   const commandTrigger = document.getElementById("command-trigger");
 
+  // Tema claro/escuro: padrão escuro, escolha salva em localStorage
+  const themeToggle = document.getElementById("theme-toggle");
+  const syncThemeToggle = () => {
+    if (!themeToggle) return;
+    const isLight = document.documentElement.dataset.theme === "light";
+    themeToggle.setAttribute("aria-pressed", String(isLight));
+    themeToggle.setAttribute("aria-label", isLight ? "Alternar para tema escuro" : "Alternar para tema claro");
+    themeToggle.querySelector(".theme-icon").textContent = isLight ? "☾" : "☀";
+    themeToggle.querySelector(".theme-label").textContent = isLight ? "Tema escuro" : "Tema claro";
+  };
+  syncThemeToggle();
+  themeToggle?.addEventListener("click", () => {
+    const isLight = document.documentElement.dataset.theme === "light";
+    if (isLight) delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = "light";
+    try {
+      localStorage.setItem("portfolio-theme", isLight ? "dark" : "light");
+    } catch { /* sem localStorage: tema vale só nesta visita */ }
+    syncThemeToggle();
+  });
+
   const pad = (n) => String(n).padStart(2, "0");
   const tick = () => {
     if (!clock) return;
