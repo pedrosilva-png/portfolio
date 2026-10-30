@@ -3,199 +3,277 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pedro Henrique — Atlas pessoal</title>
-  <meta name="description" content="Currículo-portfólio de Pedro Henrique Rodrigues da Silva — produtos digitais, Cybhor Tech e experimentos GenAI." />
+  <title>Pedro Henrique — Portfólio</title>
+  <meta name="description" content="Portfólio tech de Pedro Henrique Rodrigues da Silva — Cybhor Tech, GenAI, produtos em produção." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="hud" aria-hidden="true">
-    <span id="hud-coords">00.00 · 00.00</span>
-    <span id="hud-section">01 · ENTRADA</span>
-    <span id="hud-clock"></span>
-  </div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="orb" aria-hidden="true"></div>
 
   <header class="topbar">
-    <a class="mark" href="#topo">PH</a>
+    <a class="brand" href="#topo">
+      <span class="brand-dot" aria-hidden="true"></span>
+      pedrohenrique<span class="dim">.dev</span>
+    </a>
     <nav>
-      <a href="#trabalho">Trabalho</a>
-      <a href="#genai">GenAI</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
+      <a href="#projetos">/projetos</a>
+      <a href="#genai">/genai</a>
+      <a href="#stack">/stack</a>
+      <a href="#contato">/contato</a>
     </nav>
-    <button type="button" class="print-btn" id="btn-print">Imprimir CV</button>
+    <div class="top-actions">
+      <a class="btn ghost" href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">GitHub</a>
+      <button type="button" class="btn solid" id="btn-print">Export CV</button>
+    </div>
   </header>
 
   <main id="topo">
-    <section class="hero" data-section="01 · ENTRADA">
-      <div class="hero-media">
-        <img src="assets/hero-atlas.jpg" alt="" width="1600" height="900" />
-        <div class="hero-veil"></div>
-      </div>
-      <div class="hero-copy">
-        <p class="eyebrow">Atlas · Fernandópolis/SP · 2026</p>
-        <h1>
-          <span class="line"><span>Pedro</span></span>
-          <span class="line"><span>Henrique</span></span>
-        </h1>
-        <p class="lede">Sistemas de Informação · produtos digitais · GenAI aplicada</p>
+    <section class="hero" data-section="home">
+      <div class="hero-left">
+        <p class="status-line">
+          <span class="led"></span>
+          <span id="typed-status">status: online · building products</span>
+        </p>
+        <h1>Software que<br />sai do notebook<br />e vai pra produção.</h1>
+        <p class="lede">
+          Pedro Henrique · 19 · Sistemas de Informação (4/8).<br />
+          Fundador da <a href="https://cybhor.tech" target="_blank" rel="noopener">Cybhor Tech</a>,
+          estágio de TI na Prefeitura de Fernandópolis, demos GenAI no ar.
+        </p>
         <div class="cta-row">
-          <a class="cta solid" href="#trabalho">Ver trabalhos</a>
-          <a class="cta ghost" href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech</a>
+          <a class="btn solid" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="mailto:phelohim@gmail.com">phelohim@gmail.com</a>
         </div>
+        <ul class="quick-stats">
+          <li><span>produtos</span><strong>live</strong></li>
+          <li><span>cliente</span><strong>1+</strong></li>
+          <li><span>disponível</span><strong>~30h</strong></li>
+          <li><span>formatura</span><strong>2028</strong></li>
+        </ul>
       </div>
-      <aside class="hero-meta">
-        <div><span>Idade</span><strong>19</strong></div>
-        <div><span>Semestre</span><strong>4 / 8</strong></div>
-        <div><span>Disponível</span><strong>~30h</strong></div>
+
+      <aside class="hero-terminal" aria-label="Terminal demo">
+        <div class="term-chrome">
+          <span></span><span></span><span></span>
+          <em>~/portfolio — zsh</em>
+        </div>
+        <pre class="term-body"><code><span class="c-comment"># whoami</span>
+<span class="c-prompt">$</span> cat profile.json
+{
+  <span class="c-key">"name"</span>: <span class="c-str">"Pedro Henrique Rodrigues da Silva"</span>,
+  <span class="c-key">"role"</span>: <span class="c-str">"builder · GenAI · fullstack"</span>,
+  <span class="c-key">"company"</span>: <span class="c-str">"Cybhor Tech"</span>,
+  <span class="c-key">"stack"</span>: [<span class="c-str">"Python"</span>, <span class="c-str">"JS"</span>, <span class="c-str">"APIs"</span>, <span class="c-str">"RAG"</span>],
+  <span class="c-key">"shipping"</span>: <span class="c-bool">true</span>
+}
+
+<span class="c-prompt">$</span> ls ./projects | wc -l
+<span class="c-out">8</span>
+
+<span class="c-prompt">$</span> open cybhor.tech<span class="cursor">▌</span></code></pre>
       </aside>
     </section>
 
-    <section class="strip" id="trabalho" data-section="02 · PRODUTO">
-      <header class="section-head">
-        <p class="index">02</p>
-        <h2>Produto em operação</h2>
-        <p>Empresa própria e entregas com cliente real — não só protótipo de aula.</p>
-      </header>
+    <section class="section" id="projetos" data-section="projetos">
+      <div class="section-bar">
+        <h2><span class="hash">#</span> projetos</h2>
+        <p>Produto real + engenharia. Clique no repo para o código.</p>
+      </div>
 
-      <article class="dossier" data-id="cybhor">
-        <figure>
-          <img src="assets/proj-cybhor.jpg" alt="Ilustração editorial Cybhor Tech" loading="lazy" />
-        </figure>
-        <div class="dossier-body">
-          <p class="tag">2025 – atual</p>
-          <h3>Cybhor Tech</h3>
-          <p>Site institucional e soluções digitais (PDV, sob medida). Construído de ponta a ponta com IA, já com <strong>1 cliente</strong> no ar.</p>
-          <div class="links">
-            <a href="https://cybhor.tech" target="_blank" rel="noopener">Site</a>
-            <a href="https://github.com/PhCybhor/CybhorTech" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/PhCybhor/CybhorTechPDV" target="_blank" rel="noopener">PDV</a>
+      <div class="project-list">
+        <article class="project">
+          <div class="project-visual">
+            <img src="assets/proj-cybhor.jpg" alt="" loading="lazy" />
+            <div class="frame-label">prod · live</div>
           </div>
-        </div>
-      </article>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Cybhor Tech</h3>
+              <span class="badge live">LIVE</span>
+            </div>
+            <p>Empresa própria de soluções digitais (site, PDV, sob medida). Do briefing ao deploy com IA — <strong>1 cliente</strong> em operação.</p>
+            <ul class="tech">
+              <li>HTML/CSS/JS</li>
+              <li>Deploy Hostinger</li>
+              <li>Cursor + LLMs</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech ↗</a>
+              <a href="https://github.com/PhCybhor/CybhorTech" target="_blank" rel="noopener">repo</a>
+              <a href="https://github.com/PhCybhor/CybhorTechPDV" target="_blank" rel="noopener">PDV</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="dossier invert" data-id="looma">
-        <figure>
-          <img src="assets/proj-looma.jpg" alt="Ilustração editorial Looma Marketplace" loading="lazy" />
-        </figure>
-        <div class="dossier-body">
-          <p class="tag">Marketplace</p>
-          <h3>Looma Marketplace</h3>
-          <p>Marketplace multi-vendor (Node.js + Express + MySQL) — módulos de vitrine e operação comercial.</p>
-          <div class="links">
-            <a href="https://github.com/PhCybhor/LoomaMarketplace" target="_blank" rel="noopener">GitHub</a>
+        <article class="project">
+          <div class="project-visual">
+            <img src="assets/proj-looma.jpg" alt="" loading="lazy" />
+            <div class="frame-label">backend · marketplace</div>
           </div>
-        </div>
-      </article>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Looma Marketplace</h3>
+              <span class="badge">MULTI-VENDOR</span>
+            </div>
+            <p>Marketplace multi-vendor com Node.js, Express e MySQL — catálogo, vendedores e operação comercial.</p>
+            <ul class="tech">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MySQL</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/PhCybhor/LoomaMarketplace" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="dossier" data-id="peru">
-        <figure>
-          <img src="assets/proj-peru.jpg" alt="Ilustração editorial PERUOFICIAL" loading="lazy" />
-        </figure>
-        <div class="dossier-body">
-          <p class="tag">Cliente · e-commerce</p>
-          <h3>PERUOFICIAL</h3>
-          <p>Loja física iniciando no digital — vitrine e fluxo de compra sob a Cybhor.</p>
-          <div class="links">
-            <a href="https://github.com/PhCybhor/PERUOFICIAL" target="_blank" rel="noopener">GitHub</a>
+        <article class="project">
+          <div class="project-visual">
+            <img src="assets/proj-peru.jpg" alt="" loading="lazy" />
+            <div class="frame-label">client · ecommerce</div>
           </div>
-        </div>
-      </article>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>PERUOFICIAL</h3>
+              <span class="badge live">CLIENT</span>
+            </div>
+            <p>E-commerce para loja física entrando no digital — entrega Cybhor com foco em conversão.</p>
+            <ul class="tech">
+              <li>Front</li>
+              <li>E-commerce</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/PhCybhor/PERUOFICIAL" target="_blank" rel="noopener">repo ↗</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="dossier invert" data-id="portal">
-        <figure>
-          <img src="assets/proj-portal.jpg" alt="Ilustração editorial Portal Cybhor" loading="lazy" />
-        </figure>
-        <div class="dossier-body">
-          <p class="tag">Ops interna</p>
-          <h3>Portal Cybhor</h3>
-          <p>Portal estático para organização da equipe (web + variante mobile).</p>
-          <div class="links">
-            <a href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">v2</a>
-            <a href="https://github.com/PhCybhor/portalCybhorMobile" target="_blank" rel="noopener">Mobile</a>
+        <article class="project">
+          <div class="project-visual">
+            <img src="assets/proj-portal.jpg" alt="" loading="lazy" />
+            <div class="frame-label">internal · ops</div>
           </div>
-        </div>
-      </article>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Portal Cybhor</h3>
+              <span class="badge">INTERNAL</span>
+            </div>
+            <p>Portal da equipe (web + mobile) para organizar rotina e operações da empresa.</p>
+            <ul class="tech">
+              <li>Static web</li>
+              <li>Mobile UI</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/PhCybhor/PortalCybhor-v2" target="_blank" rel="noopener">v2 ↗</a>
+              <a href="https://github.com/PhCybhor/portalCybhorMobile" target="_blank" rel="noopener">mobile</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="strip genai" id="genai" data-section="03 · GENAI">
-      <header class="section-head">
-        <p class="index">03</p>
-        <h2>GenAI que roda</h2>
-        <p>Três demos em Python — RAG, agente com tools e automação com horas economizadas.</p>
-      </header>
+    <section class="section genai" id="genai" data-section="genai">
+      <div class="section-bar">
+        <h2><span class="hash">#</span> genai</h2>
+        <p>Pipelines que rodam — RAG, agente com tools, automação com métrica.</p>
+      </div>
 
-      <div class="rail" id="genai-rail">
-        <article class="tile">
+      <div class="genai-grid">
+        <article class="genai-card">
           <img src="assets/proj-rag.jpg" alt="" loading="lazy" />
-          <h3>RAG Cardápio / FAQ</h3>
-          <p>Retrieval TF-IDF, intenção e resposta grounded. Demo Gradio + dataset HF.</p>
-          <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/01-rag-cardapio" target="_blank" rel="noopener">Abrir</a>
+          <div class="genai-meta">
+            <span class="path">01-rag-cardapio/</span>
+            <h3>RAG FAQ Delivery</h3>
+            <p>TF-IDF + intent + resposta grounded. Gradio + dataset Hugging Face.</p>
+            <ul class="tech">
+              <li>Python</li>
+              <li>scikit-learn</li>
+              <li>Gradio</li>
+            </ul>
+            <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/01-rag-cardapio" target="_blank" rel="noopener">abrir módulo ↗</a>
+          </div>
         </article>
-        <article class="tile">
+        <article class="genai-card">
           <img src="assets/proj-agente.jpg" alt="" loading="lazy" />
-          <h3>Agente Ops</h3>
-          <p>Orquestra ferramentas de pedido, SLA e tickets com trace JSON.</p>
-          <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/02-agente-ops" target="_blank" rel="noopener">Abrir</a>
+          <div class="genai-meta">
+            <span class="path">02-agente-ops/</span>
+            <h3>Agente Ops</h3>
+            <p>Planner → tools (pedido, SLA, ticket) → resposta com trace JSON.</p>
+            <ul class="tech">
+              <li>Python</li>
+              <li>Tool calling</li>
+              <li>Gradio</li>
+            </ul>
+            <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/02-agente-ops" target="_blank" rel="noopener">abrir módulo ↗</a>
+          </div>
         </article>
-        <article class="tile">
+        <article class="genai-card">
           <img src="assets/proj-auto.jpg" alt="" loading="lazy" />
-          <h3>Automação relatório</h3>
-          <p>~50 min/dia → segundos. KPIs, alertas e manifesto tipo n8n/Make.</p>
-          <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/03-automacao-relatorio" target="_blank" rel="noopener">Abrir</a>
+          <div class="genai-meta">
+            <span class="path">03-automacao-relatorio/</span>
+            <h3>Automação relatório</h3>
+            <p>~50 min/dia → segundos. KPIs, alertas, manifesto n8n/Make.</p>
+            <ul class="tech">
+              <li>Python</li>
+              <li>pandas</li>
+              <li>Automation</li>
+            </ul>
+            <a href="https://github.com/pedrosilva-png/genai-portfolio/tree/main/03-automacao-relatorio" target="_blank" rel="noopener">abrir módulo ↗</a>
+          </div>
         </article>
       </div>
-      <p class="rail-hint">Arraste horizontalmente · <a href="https://github.com/pedrosilva-png/genai-portfolio" target="_blank" rel="noopener">repo completo</a></p>
+      <p class="repo-line">
+        monorepo →
+        <a href="https://github.com/pedrosilva-png/genai-portfolio" target="_blank" rel="noopener">github.com/pedrosilva-png/genai-portfolio</a>
+      </p>
     </section>
 
-    <section class="sobre" id="sobre" data-section="04 · SOBRE">
-      <header class="section-head">
-        <p class="index">04</p>
-        <h2>Sobre</h2>
-      </header>
-      <div class="sobre-grid">
-        <p class="manifesto">
-          Estudante de <strong>Sistemas de Informação</strong> (4º/8, formatura prevista 2º sem/2028).
-          Estágio de TI na <strong>Prefeitura de Fernandópolis</strong>. Tiro de Guerra encerrando em nov/2026.
-          Constrói software do briefing ao deploy — com Cybhor Tech já atendendo cliente.
-        </p>
-        <dl class="facts">
-          <div><dt>Stack</dt><dd>Python, JS, HTML/CSS, Git, APIs, Gradio, Linux</dd></div>
-          <div><dt>IA</dt><dd>RAG, agentes com tools, prompts, automações</dd></div>
-          <div><dt>Idiomas</dt><dd>PT nativo · EN leitura técnica</dd></div>
-        </dl>
+    <section class="section" id="stack" data-section="stack">
+      <div class="section-bar">
+        <h2><span class="hash">#</span> stack</h2>
+        <p>Ferramentas que uso de verdade no dia a dia.</p>
+      </div>
+      <div class="stack-grid">
+        <div>
+          <h3>Lang</h3>
+          <p>Python · JavaScript · HTML/CSS · SQL</p>
+        </div>
+        <div>
+          <h3>IA</h3>
+          <p>RAG · agentes · Gradio · Hugging Face · Cursor</p>
+        </div>
+        <div>
+          <h3>Ops</h3>
+          <p>Git · Linux · Deploy · APIs REST · automações</p>
+        </div>
+        <div>
+          <h3>Agora</h3>
+          <p>SI 4/8 · Prefeitura (TI) · Cybhor · TG → nov/2026</p>
+        </div>
       </div>
     </section>
 
-    <section class="contato" id="contato" data-section="05 · CONTATO">
-      <h2>Vamos conversar</h2>
-      <ul class="contact-list">
-        <li><a href="mailto:phelohim@gmail.com">phelohim@gmail.com</a></li>
-        <li><a href="mailto:pedrosilva@aluno.unifef.edu.br">pedrosilva@aluno.unifef.edu.br</a></li>
-        <li><a href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">github.com/pedrosilva-png</a></li>
-        <li><a href="https://www.linkedin.com/in/pedro-henrique-rodrigues-da-silva-a65103448/" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+    <section class="section contato" id="contato" data-section="contato">
+      <div class="section-bar">
+        <h2><span class="hash">#</span> contato</h2>
+      </div>
+      <div class="contact-panel">
+        <a href="mailto:phelohim@gmail.com">phelohim@gmail.com</a>
+        <a href="mailto:pedrosilva@aluno.unifef.edu.br">pedrosilva@aluno.unifef.edu.br</a>
+        <a href="https://github.com/pedrosilva-png" target="_blank" rel="noopener">github.com/pedrosilva-png</a>
+        <a href="https://www.linkedin.com/in/pedro-henrique-rodrigues-da-silva-a65103448/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://cybhor.tech" target="_blank" rel="noopener">cybhor.tech</a>
+      </div>
     </section>
   </main>
 
-  <!-- Versão impressa / CV clássico embutido -->
-  <section class="print-only" aria-hidden="true">
-    <h1>Pedro Henrique Rodrigues da Silva</h1>
-    <p>19 anos · SI 4/8 · Fernandópolis/SP · phelohim@gmail.com · github.com/pedrosilva-png</p>
-    <h2>Experiência</h2>
-    <p><strong>Estágio TI — Prefeitura de Fernandópolis</strong> (atual)</p>
-    <p><strong>Cybhor Tech</strong> — fundador; cybhor.tech; 1 cliente</p>
-    <h2>Projetos</h2>
-    <p>Looma Marketplace · PERUOFICIAL · Portal Cybhor · RAG FAQ · Agente Ops · Automação relatório</p>
-    <p>github.com/pedrosilva-png/genai-portfolio</p>
-  </section>
-
   <footer class="foot">
-    <span>© 2026 Pedro Henrique</span>
-    <span class="pulse" id="avail">Disponível ~30h/semana após TG</span>
+    <span>© 2026 Pedro Henrique Rodrigues da Silva</span>
+    <span class="mono" id="clock"></span>
   </footer>
 
   <script src="app.js"></script>
