@@ -36,20 +36,22 @@
   tick();
   setInterval(tick, 1000);
 
-  // Split hero headline into animated words
-  const h1 = document.querySelector(".hero h1");
+  // Split the name (h1) into animated words
+  const h1 = document.querySelector(".hero-name");
   if (h1 && !reduce) {
     const html = h1.innerHTML;
     h1.innerHTML = html
       .split(/<br\s*\/?>/i)
-      .map((line) =>
+      .map((line, lineIndex) =>
         line
+          .replace(/<[^>]+>/g, "")
           .trim()
           .split(/\s+/)
           .filter(Boolean)
           .map((w, i, arr) => {
-            const delay = 0.06 + i * 0.05;
-            return `<span class="word" style="animation-delay:${delay}s">${w}</span>${i < arr.length - 1 ? " " : ""}`;
+            const delay = 0.06 + (lineIndex * 3 + i) * 0.08;
+            const accent = lineIndex > 0 ? " accent" : "";
+            return `<span class="word${accent}" style="animation-delay:${delay}s">${w}</span>${i < arr.length - 1 ? " " : ""}`;
           })
           .join("")
       )
