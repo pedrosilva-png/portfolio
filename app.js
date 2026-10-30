@@ -55,7 +55,7 @@
   }
 
   // Scroll reveal
-  document.querySelectorAll(".project, .genai-card, .stack-grid > div, .contact-panel").forEach((el, idx) => {
+  document.querySelectorAll(".project, .genai-card, .stack-layer, .stack-monitor, .contact-panel").forEach((el, idx) => {
     el.classList.add("reveal");
     el.style.transitionDelay = `${(idx % 4) * 0.07}s`;
   });

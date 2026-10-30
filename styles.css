@@ -609,6 +609,124 @@ a { color: inherit; }
 .command-palette nav a:hover,.command-palette nav a:focus { outline:none; background:var(--panel-2); }
 .command-palette nav a>span { font:.68rem var(--mono); color:var(--olive); }
 
+/* Case-study stack: each project becomes a scene */
+.project-list { gap: 5rem; }
+.project {
+  position: sticky;
+  top: calc(72px + var(--i) * 13px);
+  min-height: 520px;
+  grid-template-columns: minmax(360px, .95fr) 1.05fr;
+  box-shadow: 0 24px 80px rgba(0,0,0,.5);
+}
+.project-visual { min-height: 520px; }
+.project-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.4rem,4vw,3.5rem);
+}
+.project-head h3 { font-size: clamp(1.55rem,3vw,2.45rem); letter-spacing:-.025em; }
+.project-body>p { max-width: 42rem; font-size: 1.05rem; }
+.project-no {
+  position: absolute; right: .85rem; top: .75rem;
+  font: 600 clamp(2.4rem,6vw,5rem)/1 var(--mono);
+  color: rgba(180,196,138,.22); letter-spacing:-.08em;
+}
+.case-metrics {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  margin:1.15rem 0; border-block:1px solid var(--line);
+}
+.case-metrics>div { padding:.75rem .75rem .75rem 0; }
+.case-metrics>div+div { border-left:1px solid var(--line); padding-left:.75rem; }
+.case-metrics dt { font:.62rem var(--mono); color:var(--mute); margin-bottom:.2rem; }
+.case-metrics dd { margin:0; font:.78rem var(--mono); color:var(--olive-bright); }
+
+/* GenAI lab: cards read like executable modules */
+.genai {
+  position:relative;
+  max-width:none;
+  padding-inline:max(1.5rem,calc((100vw - 1320px)/2));
+  background:
+    linear-gradient(rgba(143,159,110,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(143,159,110,.035) 1px,transparent 1px),
+    #090b08;
+  background-size:32px 32px;
+}
+.genai-grid { grid-template-columns:repeat(12,1fr); gap:1rem; }
+.genai-card { grid-column:span 4; display:flex; flex-direction:column; }
+.genai-card:first-child { grid-column:span 5; }
+.genai-card:nth-child(2) { grid-column:span 7; }
+.genai-card:nth-child(3) { grid-column:3/span 8; }
+.genai-card img { aspect-ratio:16/8; }
+.genai-meta { display:flex; flex-direction:column; flex:1; padding:1.2rem 1.25rem 1.4rem; }
+.pipeline {
+  display:flex; align-items:center; gap:.35rem; margin:.65rem 0 .8rem;
+  overflow-x:auto; padding-bottom:.2rem;
+}
+.pipeline span {
+  flex:none; font:.6rem var(--mono); color:var(--olive-bright);
+  border:1px solid var(--line); background:rgba(143,159,110,.07);
+  padding:.25rem .42rem; border-radius:3px;
+}
+.pipeline i { flex:1; min-width:12px; height:1px; background:var(--olive-dim); position:relative; }
+.pipeline i::after {
+  content:""; position:absolute; right:-1px; top:-2px;
+  border-left:4px solid var(--olive-dim); border-block:2px solid transparent;
+}
+.genai-meta pre {
+  margin:0 0 .85rem; padding:.75rem; overflow:auto;
+  background:#080a07; border:1px solid var(--line); border-radius:4px;
+  color:#aab29c; font:.68rem/1.6 var(--mono);
+}
+.genai-meta pre b { color:var(--olive-bright); font-weight:500; }
+.genai-meta>a { margin-top:auto; }
+
+/* Stack architecture */
+.stack-system {
+  display:grid; grid-template-columns:1.2fr .8fr; gap:1rem;
+}
+.stack-layers { display:grid; gap:.65rem; }
+.stack-layer {
+  position:relative; overflow:hidden;
+  display:grid; grid-template-columns:52px 1fr auto; align-items:center; gap:1rem;
+  min-height:92px; padding:1rem 1.15rem;
+  border:1px solid var(--line); border-radius:7px; background:var(--panel);
+  transition:border-color .25s var(--ease),background .25s var(--ease);
+}
+.stack-layer::after {
+  content:""; position:absolute; left:0; bottom:0; width:var(--level); height:2px;
+  background:var(--olive); transform:scaleX(0); transform-origin:left;
+  transition:transform 1s var(--ease);
+}
+.stack-layer.in::after { transform:scaleX(1); }
+.stack-layer:hover { border-color:rgba(180,196,138,.45); background:var(--panel-2); }
+.layer-id { font:.68rem var(--mono); color:var(--olive); }
+.stack-layer h3 { margin:0 0 .25rem; font-size:1rem; }
+.stack-layer p { margin:0; color:var(--mute); font:.78rem var(--mono); }
+.usage { font:.62rem var(--mono); color:var(--olive-bright); border:1px solid var(--line); padding:.25rem .45rem; border-radius:3px; }
+.stack-monitor {
+  border:1px solid var(--line); border-radius:8px; background:#0b0d0a; overflow:hidden;
+}
+.monitor-head {
+  display:flex; justify-content:space-between; padding:.75rem .85rem;
+  border-bottom:1px solid var(--line); font:.65rem var(--mono); color:var(--mute);
+}
+.monitor-head i { font-style:normal; color:var(--olive-bright); }
+.stack-monitor svg { width:100%; max-height:330px; padding:1rem; }
+.radar-grid { fill:none; stroke:rgba(143,159,110,.22); stroke-width:1; }
+.radar-value {
+  fill:rgba(143,159,110,.14); stroke:var(--olive-bright); stroke-width:1.5;
+  stroke-dasharray:700; stroke-dashoffset:700;
+  animation:radar-draw 2s var(--ease) forwards;
+}
+@keyframes radar-draw { to { stroke-dashoffset:0; } }
+.radar-labels { fill:var(--mute); font:9px var(--mono); text-anchor:middle; }
+.monitor-stats { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }
+.monitor-stats>div { padding:.7rem; text-align:center; }
+.monitor-stats>div+div { border-left:1px solid var(--line); }
+.monitor-stats span { display:block; font:.55rem var(--mono); color:var(--mute); }
+.monitor-stats strong { font:.7rem var(--mono); color:var(--olive-bright); }
+
 @media (min-width: 1200px) {
   .hero { max-width: 1380px; padding-inline: 3rem; }
   .hero h1 { font-size: clamp(3.5rem,5.3vw,5.2rem); }
@@ -629,6 +747,15 @@ a { color: inherit; }
   .systems-map { min-height: 520px; }
   .map-stage { min-height: 430px; }
   .command-trigger { display: none; }
+  .project { position:relative; top:auto; min-height:0; grid-template-columns:1fr; }
+  .project-visual { min-height:320px; }
+  .case-metrics { grid-template-columns:1fr; }
+  .case-metrics>div+div { border-left:0; border-top:1px solid var(--line); padding-left:0; }
+  .genai-grid { grid-template-columns:1fr; }
+  .genai-card,.genai-card:first-child,.genai-card:nth-child(2),.genai-card:nth-child(3) { grid-column:auto; }
+  .stack-system { grid-template-columns:1fr; }
+  .stack-layer { grid-template-columns:42px 1fr; }
+  .usage { display:none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
